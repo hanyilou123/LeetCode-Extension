@@ -6,28 +6,28 @@ public class Solution {
         {
             for(int i=left; i<=right; i++)
             {
-                matrix[up][i] = num++;
+                result[up][i] = num++;
             }
             up++;
             if(up>down) break;
             
             for(int i=up; i<=down; i++)
             {
-                matrix[i][right] = num++;
+                result[i][right] = num++;
             }
             right--;
             if(left>right) break;
             
             for(int i=right; i>=left; i--)
             {
-                matrix[down][i] = num++;
+                result[down][i] = num++;
             }
             down--;
             if(up>down) break;
             
             for(int i=down; i>=up; i--)
             {
-                matrix[i][left] = num++;
+                result[i][left] = num++;
             }
             left++;
             if(left>right) break;

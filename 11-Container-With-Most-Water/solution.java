@@ -7,7 +7,7 @@ public class Solution {
         {
             // res = Math.max(res, (right-left)*(Math.min(height[left], height[right])));
             int temp = (height[left]<=height[right]? height[left]:height[right]);
-            res = (res<=(right-left)*temp?(right-left)*temp):res;
+            res = (res<=(right-left)*temp?(right-left)*temp:res);
             if(height[left]<=height[right])
             {
                 left++;

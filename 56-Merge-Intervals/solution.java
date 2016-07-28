@@ -33,5 +33,5 @@ public class Solution {
         public int compare(Interval a, Interval b){
             return a.start - b.start;
         }
-    }
+    };
 }

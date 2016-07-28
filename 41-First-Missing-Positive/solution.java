@@ -7,9 +7,10 @@ public class Solution {
         {
             if(nums[pos]>0 && nums[pos]<=n && nums[pos]!=pos+1 && nums[nums[pos]-1]!=nums[pos])
             {
-                temp = nums[pos];
-                nums[pos] = nums[nums[pos]-1];
-                nums[nums[pos]-1] = temp;
+                // temp = nums[pos];
+                // nums[pos] = nums[nums[pos]-1];
+                // nums[nums[pos]-1] = temp;
+                swap(nums[pos], nums[nums[pos]-1]);
             }
             else
             {
@@ -22,5 +23,11 @@ public class Solution {
                 return i+1;
         }
         return n+1;
+    }
+    public void swap(int a, int b)
+    {
+        int temp = a;
+        a = b;
+        b = temp;
     }
 }

@@ -1,15 +1,15 @@
 public class Solution {
     public int firstMissingPositive(int[] nums) {
-        if(nums==null || nums.length==0)
+        if(nums==null)
             return 1;
         int n = nums.length, pos=0, temp=0;
         while(pos<n)
         {
             if(nums[pos]>0 && nums[pos]<=n && nums[pos]!=pos+1 && nums[nums[pos]-1]!=nums[pos])
             {
-                // temp = nums[pos];
-                // nums[pos] = nums[nums[pos]-1];
-                // nums[nums[pos]-1] = temp;
+                temp = nums[pos];
+                nums[pos] = nums[nums[pos]-1];
+                nums[nums[pos]-1] = temp;
                 swap(nums[pos], nums[nums[pos]-1]);
             }
             else
@@ -23,11 +23,5 @@ public class Solution {
                 return i+1;
         }
         return n+1;
-    }
-    public void swap(int a, int b)
-    {
-        int temp = a;
-        a = b;
-        b = temp;
     }
 }

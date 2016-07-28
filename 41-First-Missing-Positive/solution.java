@@ -5,7 +5,7 @@ public class Solution {
         int n = nums.length, pos=0;
         while(pos<n)
         {
-            if(nums[pos]!=pos+1 && nums[nums[pos]-1]!=nums[pos] && nums[pos]>0 && nums[pos]<=n)
+            if(nums[pos]>0 && nums[pos]<=n && nums[pos]!=pos+1 && nums[nums[pos]-1]!=nums[pos])
             {
                 int temp = nums[pos];
                 nums[pos] = nums[nums[pos]-1];

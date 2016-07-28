@@ -7,11 +7,11 @@ public class Solution {
         {
             while(nums[i]>0 && nums[i]<=n && nums[i]!=(i+1))
             {
-                int temp = nums[i];
-                if(temp==nums[nums[i]-1])
+                int temp = nums[nums[i]-1];
+                if(temp==nums[i])
                     break;
-                nums[i] = nums[nums[i]-1];
-                nums[nums[i]-1] = temp;
+                nums[nums[i]-1] = nums[i];
+                nums[i] = temp;
             }
         }
         for(int i=0; i<n; i++)

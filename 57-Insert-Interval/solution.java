@@ -10,7 +10,7 @@
 public class Solution {
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
         List<Interval> res = new ArrayList<Interval>();
-        if(intervals==null || intervals.size()==0)
+        if(intervals==null)
             return res;
         if(newInterval==null)
             return intervals;
@@ -22,7 +22,7 @@ public class Solution {
                 res.add(intervals.get(i));
                 insertPos++;
             }
-            else if(interval.get(i).start > newInterval.end)
+            else if(intervals.get(i).start > newInterval.end)
             {
                 res.add(intervals.get(i));
             }

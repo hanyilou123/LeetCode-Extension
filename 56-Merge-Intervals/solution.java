@@ -10,7 +10,7 @@
 public class Solution {
     public List<Interval> merge(List<Interval> intervals) {
         List<Interval> res = new ArrayList<Interval>();
-        if(intervals==null)
+        if(intervals==null || intervals.size()==0)
             return res;
         Collections.sort(intervals, intervalComparator);
         Interval last = intervals.get(0);

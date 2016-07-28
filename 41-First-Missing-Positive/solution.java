@@ -10,6 +10,7 @@ public class Solution {
                 temp = nums[pos];
                 nums[pos] = nums[nums[pos]-1];
                 nums[nums[pos]-1] = temp;
+                pos++;
             }
             else
             {

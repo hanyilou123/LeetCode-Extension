@@ -11,10 +11,11 @@ public class Solution {
         queue.offer(beginWord);
         hash.add(beginWord);
         int length = 1;
-        while(!queue.empty())
+        while(!queue.isEmpty())
         {
             length++;
-            for(int i=0; i<queue.size(); i++)
+            int size = queue.size();
+            for(int i=0; i<size; i++)
             {
                 String word = queue.poll();
                 for(String nextword: getNextWord(word, wordList))
@@ -23,10 +24,9 @@ public class Solution {
                         continue;
                     if(nextword.equals(endWord))
                         return length;
-                    queue.offer(nextword);
                     hash.add(nextword);
+                    queue.offer(nextword);
                 }
-                
             }
         }
         return 0;
@@ -34,9 +34,9 @@ public class Solution {
     public ArrayList<String> getNextWord(String word, Set<String> wordList)
     {
         ArrayList<String> nextWordList = new ArrayList<String>();
-        for(int i=0; i<word.length(); i++)
+        for(char c='a'; c<='z'; c++)
         {
-            for(char c='a'; c<='z'; c++)
+            for(int i=0; i<word.length(); i++)
             {
                 if(word.charAt(i)==c)
                     continue;

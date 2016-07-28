@@ -15,21 +15,21 @@ public class Solution {
         if(newInterval==null)
             return intervals;
         int insertPos = 0;
-        for(int i=0; i<intervals.size(); i++)
+        for(Interval interval : intervals)
         {
-            if(intervals.get(i).end < newInterval.start)
+            if(interval.end < newInterval.start)
             {
-                res.add(intervals.get(i));
+                res.add(interval);
                 insertPos++;
             }
-            else if(intervals.get(i).start > newInterval.end)
+            else if(interval.start > newInterval.end)
             {
-                res.add(intervals.get(i));
+                res.add(interval);
             }
             else
             {
-                newInterval.start = Math.min(newInterval.start, intervals.get(i).start);
-                newInterval.end = Math.max(newInterval.end, intervals.get(i).end);
+                newInterval.start = Math.min(newInterval.start, interval.start);
+                newInterval.end = Math.max(newInterval.end, interval.end);
             }
         }
         res.add(insertPos, newInterval);

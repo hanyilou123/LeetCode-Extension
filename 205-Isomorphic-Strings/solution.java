@@ -4,7 +4,7 @@ public class Solution {
             return false;
         if(s.length()!=t.length())
             return false;
-        Map<Charater, Charater> map = HashMap<Charater, Charater>();
+        Map<Charater, Charater> map = new HashMap<Charater, Charater>();
         Set<Charater> set = new HashSet<Charater>();
         for(int i=0; i<s.length(); i++)
         {

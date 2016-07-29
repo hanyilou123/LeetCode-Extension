@@ -14,7 +14,7 @@ public class Solution {
                 flag[i]=1;
             }
         }
-        if(nullrow)
+        if(nullrow.size()>0)
             result.add(nullrow);
         
         for(int i=0; i<len; i++)

@@ -2,7 +2,7 @@ public class Solution {
     public int longestConsecutive(int[] nums) {
         if(nums==null || nums.length==0)
             return 0;
-        Set<Integer> hash = new HashSet<Integer>();
+        Set<Integer> hash = new HashSet<Integer>();    //空间换时间
         for(int i=0; i<nums.length; i++)
         {
             hash.add(nums[i]);

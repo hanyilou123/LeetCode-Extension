@@ -4,54 +4,25 @@ public class Solution {
         if(strs==null)
             return result;
         int len = strs.length;
-        int[] flag = new int[len];
-        List<String> nullrow = new ArrayList<String>();
+            
+        Map<String, List<String>> map1 = new HashMap<String, ArrayList<String>>();
         for(int i=0; i<len; i++)
         {
-            if(strs[i].equals(""))
+            char[] temp = strs[i].toCharArray();
+            Arrays.sort(temp);
+            String newStr = new String(temp);
+            if(map1.containsKey(newStr))
+                map1.get(newStr).add(strs[i]);
+            else
             {
-                nullrow.add(strs[i]);
-                flag[i]=1;
+                List<String> valList = new ArrayList<String>();
+                valList.add(strs[i]);
+                map1.put(newStr, valList);
             }
         }
-        if(nullrow.size()>0)
-            result.add(nullrow);
-        
-        for(int i=0; i<len; i++)
+        for(Map.Entry entry: map1)
         {
-            if(flag[i]==0)
-            {
-                List<String> row = new ArrayList<String>();
-                row.add(strs[i]);
-                flag[i]=1;
-                for(int j=i+1; j<len; j++)
-                {
-                    if(flag[j]==0)
-                    {
-                        int[] model = new int[26]; 
-                        for(int l=0; l<strs[i].length(); l++)
-                        {
-                            model[strs[i].charAt(l)-'a']++;
-                        }
-                        for(int k=0; k<strs[j].length(); k++)
-                        {
-                            model[strs[j].charAt(k)-'a']--;
-                        }
-                        int index=0;
-                        for(index=0; index<26; index++)
-                        {
-                            if(model[index]!=0)
-                                break;
-                        }
-                        if(index==26)
-                        {
-                            row.add(strs[j]);
-                            flag[j]=1;
-                        }
-                    }
-                }
-                result.add(row);
-            }
+            result.add(entry.getValue());
         }
         return result;
     }

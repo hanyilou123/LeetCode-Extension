@@ -8,6 +8,7 @@ public class Solution {
             hash.add(n);
             n = getNext(n);
         }
+        return true;
     }
     public int getNext(int num)
     {

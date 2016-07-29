@@ -20,7 +20,7 @@ public class Solution {
                 map1.put(newStr, valList);
             }
         }
-        for(Map.Entry entry: map1)
+        for(Map.Entry<String, ArrayList<String>> entry: map1)
         {
             result.add(entry.getValue());
         }

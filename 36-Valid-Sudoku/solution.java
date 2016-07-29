@@ -23,9 +23,10 @@ public class Solution {
         {
             for(int j=0; j<9; j+=3)
             {
+                Arrays.fill(visited, false);
                 for(int k=0; k<9; k++)
                 {
-                    if(!visitProcess(board[i+k/3][j+k%3]))
+                    if(!visitProcess(board[i+k/3][j+k%3], visited))
                         return false;
                 }
             }
@@ -40,5 +41,6 @@ public class Solution {
         if(num<1 || num>9 || visited[num-1]==true)
             return false;
         visited[nums-1] = true;
+        return true;
     }
 }

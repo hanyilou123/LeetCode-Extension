@@ -15,7 +15,7 @@ public class Solution {
                 map1.get(newStr).add(strs[i]);
             else
             {
-                List<String> valList = new ArrayList<String>();
+                ArrayList<String> valList = new ArrayList<String>();
                 valList.add(strs[i]);
                 map1.put(newStr, valList);
             }

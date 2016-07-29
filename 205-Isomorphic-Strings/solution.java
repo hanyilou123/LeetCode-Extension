@@ -4,8 +4,8 @@ public class Solution {
             return false;
         if(s.length()!=t.length())
             return false;
-        Map<Charater, Charater> map = new HashMap<Charater, Charater>();
-        Set<Charater> set = new HashSet<Charater>();
+        Map<Character, Character> map = new HashMap<Character, Character>();
+        Set<Character> set = new HashSet<Character>();
         for(int i=0; i<s.length(); i++)
         {
             char sc = s.charAt(i);

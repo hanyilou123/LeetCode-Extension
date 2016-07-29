@@ -5,7 +5,7 @@ public class Solution {
             return result;
         int len = strs.length;
             
-        Map<String, List<String>> map1 = new HashMap<String, ArrayList<String>>();
+        Map<String, ArrayList<String>> map1 = new HashMap<String, ArrayList<String>>();
         for(int i=0; i<len; i++)
         {
             char[] temp = strs[i].toCharArray();

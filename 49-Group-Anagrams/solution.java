@@ -8,12 +8,14 @@ public class Solution {
         List<String> nullrow = new ArrayList<String>();
         for(int i=0; i<len; i++)
         {
-            if(strs[j].equals(""))
+            if(strs[i].equals(""))
             {
-                nullrow.add(strs[j]);
-                flag[j]=1;
+                nullrow.add(strs[i]);
+                flag[i]=1;
             }
         }
+        if(nullrow)
+            result.add(nullrow);
         
         for(int i=0; i<len; i++)
         {

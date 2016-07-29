@@ -29,7 +29,7 @@ public class Solution {
         }
         for(Map.Entry<Character, Integer> entry: res1.entrySet())
         {
-            if(entry.getValue!=0)
+            if(entry.getValue()!=0)
                 return false;
         }
         return true;

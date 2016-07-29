@@ -29,13 +29,13 @@ public class Solution {
             }
         }
         int size=0;
-        for(Entry<Integer, Integer> entry : res2.entrySet())
+        for(Map.Entry<Integer, Integer> entry : res2.entrySet())
         {
             size+=entry.getValue();
         }
         int[] result = new int[size];
         int index=0;
-        for(Entry<Integer, Integer> entry : res2.entrySet())
+        for(Map.Entry<Integer, Integer> entry : res2.entrySet())
         {
             for(int i=0; i<entry.getValue(); i++)
             {

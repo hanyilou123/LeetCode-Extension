@@ -5,6 +5,16 @@ public class Solution {
             return result;
         int len = strs.length;
         int[] flag = new int[len];
+        List<String> nullrow = new ArrayList<String>();
+        for(int i=0; i<len; i++)
+        {
+            if(strs[j].equals(""))
+            {
+                nullrow.add(strs[j]);
+                flag[j]=1;
+            }
+        }
+        
         for(int i=0; i<len; i++)
         {
             if(flag[i]==0)
@@ -12,40 +22,26 @@ public class Solution {
                 List<String> row = new ArrayList<String>();
                 row.add(strs[i]);
                 flag[i]=1;
-                if(!strs[i].equals(""))
+                for(int j=i+1; j<len; j++)
                 {
-                    for(int j=i+1; j<len; j++)
+                    if(flag[j]==0)
                     {
                         int[] model = new int[26]; 
                         for(int l=0; l<strs[i].length(); l++)
                         {
                             model[strs[i].charAt(l)-'a']++;
                         }
-                        if(flag[j]==0 && !strs[j].equals("") && strs[j].length()==strs[i].length())
+                        for(int k=0; k<strs[j].length(); k++)
                         {
-                            for(int k=0; k<strs[j].length(); k++)
-                            {
-                                model[strs[j].charAt(k)-'a']--;
-                            }
-                            int index=0;
-                            for(index=0; index<26; index++)
-                            {
-                                if(model[index]!=0)
-                                    break;
-                            }
-                            if(index==26)
-                            {
-                                row.add(strs[j]);
-                                flag[j]=1;
-                            }
+                            model[strs[j].charAt(k)-'a']--;
                         }
-                    }
-                }
-                else
-                {
-                    for(int j=i+1; j<len; j++)
-                    {
-                        if(strs[j].equals(""))
+                        int index=0;
+                        for(index=0; index<26; index++)
+                        {
+                            if(model[index]!=0)
+                                break;
+                        }
+                        if(index==26)
                         {
                             row.add(strs[j]);
                             flag[j]=1;

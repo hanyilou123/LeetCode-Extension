@@ -12,30 +12,48 @@ public class Solution {
                 List<String> row = new ArrayList<String>();
                 row.add(strs[i]);
                 flag[i]=1;
-                Set<Character> ana = new HashSet<Character>();
-                for(int j=0; j<strs[i].length(); j++)
+                if(!strs[i].equals(""))
                 {
-                    ana.add(strs[i].charAt(j));
-                }
-                for(int j=i; j<len; j++)
-                {
-                    if(flag[j]==0)
+                    for(int j=i+1; j<len; j++)
                     {
-                        int k = 0;
-                        for(k=0; k<strs[j].length(); k++)
+                        int[] model = new int[26]; 
+                        for(int j=0; j<strs[i].length(); j++)
                         {
-                            if(!ana.contains(strs[j].charAt(k)))
-                                break;
+                            model[strs[i].charAt(j)-'a']++;
                         }
-                        if(k==strs[j].length())
+                        if(flag[j]==0 && !strs[j].equals("") && strs[j].length()==strs[i].length())
+                        {
+                            for(int k=0; k<strs[j].length(); k++)
+                            {
+                                model[strs[j].charAt(k)-'a']--;
+                            }
+                            int index=0;
+                            for(index=0; index<26; index++)
+                            {
+                                if(model[index]!=0)
+                                    break;
+                            }
+                            if(index==26)
+                            {
+                                row.add(strs[j]);
+                                flag[j]=1;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    for(int j=i+1; j<len; j++)
+                    {
+                        if(strs[j].equals(""))
                         {
                             row.add(strs[j]);
                             flag[j]=1;
                         }
                     }
                 }
+                result.add(row);
             }
-            result.add(row);
         }
         return result;
     }

@@ -11,12 +11,20 @@ public class Solution {
         for(int i=0; i<g.length; i++)
         {
             if(g[i]==s[i])
+            {
                 bull++;
-            else if(model[g[i]-'0']>0)
-                cow++;
-            model[g[i]-'0']--;
+                model[g[i]-'0']--;
+            }
         }
-        String result = boll+"A"+cow+"B";
+        for(int i=0; i<g.length; i++)
+        {
+            if(g[i]!=s[i] && model[g[i]-'0']>0)
+            {
+                cow++;
+                model[g[i]-'0']--;
+            }
+        }
+        String result = bull+"A"+cow+"B";
         return result;
     }
 }

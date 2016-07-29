@@ -5,11 +5,11 @@ public class Solution {
         int hIndex = 0;
         for(int i=len-1; i>=0; i++)
         {
-            if(len-i<=citations[i])
+            if(len-i>citations[i])
             {
-                hIndex = len-i;
+                return len-i;
             }
         }
-        return hIndex;
+        return len;
     }
 }

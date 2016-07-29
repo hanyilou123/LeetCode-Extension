@@ -17,9 +17,9 @@ public class Solution {
                     for(int j=i+1; j<len; j++)
                     {
                         int[] model = new int[26]; 
-                        for(int j=0; j<strs[i].length(); j++)
+                        for(int l=0; l<strs[i].length(); l++)
                         {
-                            model[strs[i].charAt(j)-'a']++;
+                            model[strs[i].charAt(l)-'a']++;
                         }
                         if(flag[j]==0 && !strs[j].equals("") && strs[j].length()==strs[i].length())
                         {

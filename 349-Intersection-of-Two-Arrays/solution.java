@@ -11,7 +11,7 @@ public class Solution {
             res2.add(nums2[i]);
         for(int i=0; i<res1.size(); i++)
         {
-            if(res2.contains(res1.get(i))
+            if(res2.contains(res1.get(i)))
                 res3.add(res1.get(i));
         }
         if(res3)

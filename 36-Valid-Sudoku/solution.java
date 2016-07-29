@@ -40,7 +40,7 @@ public class Solution {
         int num = c-'0';
         if(num<1 || num>9 || visited[num-1]==true)
             return false;
-        visited[nums-1] = true;
+        visited[num-1] = true;
         return true;
     }
 }

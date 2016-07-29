@@ -1,13 +1,13 @@
 public class Solution {
     public int hIndex(int[] citations) {
-        Arrays.sort(citations);
+        Arrays.sort(citations,Collections.reverseOrder());
         int len = citations.length;
         int hIndex = 0;
-        for(int i=len-1; i>=0; i++)
+        for(int i=0; i<len; i++)
         {
-            if(len-i>=citations[i])
+            if(i>=citations[i])
             {
-                return len-i;
+                return i;
             }
         }
         return len;

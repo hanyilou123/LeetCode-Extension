@@ -32,7 +32,7 @@ public class Solution {
         }
         return true;
     }
-    public visitProcess(char c, boolean[] visited)
+    public boolean visitProcess(char c, boolean[] visited)
     {
         if(c=='.')
             return true;

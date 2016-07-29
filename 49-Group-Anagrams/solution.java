@@ -21,7 +21,8 @@ public class Solution {
                 {
                     if(flag[j]==0)
                     {
-                        for(int k=0; k<strs[j].length(); k++)
+                        int k = 0;
+                        for(k=0; k<strs[j].length(); k++)
                         {
                             if(!ana.contains(strs[j].charAt(k)))
                                 break;

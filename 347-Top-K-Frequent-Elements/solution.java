@@ -1,7 +1,7 @@
 public class Solution {
     public List<Integer> topKFrequent(int[] nums, int k) {
         List<Integer> res = new ArrayList<Integer>();
-        Map<Integer, Integer> hash = HashMap<Integer, Integer>();
+        Map<Integer, Integer> hash = new HashMap<Integer, Integer>();
         PriorityQueue<Map.Entry<Integer,Integer>> que = new PriorityQueue<Map.Entry<Integer,Integer>>(
             new Comparator<Map.Entry<Integer, Integer>>(){
                 public int compare(Map.Entry<Integer,Integer>e1, Map.Entry<Integer, Integer>e2)

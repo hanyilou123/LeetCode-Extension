@@ -12,7 +12,7 @@ public class Solution {
         long num = numerator, den = denominator;
         num = Math.abs(num);
         den = Math.abs(den);
-        res += String.valueOf(num/den);
+        res += num/den;
         
         long rem = num%den*10;
         if(rem==0)
@@ -34,7 +34,7 @@ public class Solution {
             else
             {
                 hash.put(rem, res.length());
-                res += String.valueOf(rem/den);
+                res += rem/den;
                 rem = rem%den*10;
             }
         }

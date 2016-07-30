@@ -14,7 +14,7 @@ public class Solution {
         den = Math.abs(num);
         res += num/den;
         
-        int rem = num%den*10;
+        long rem = num%den*10;
         if(rem==0)
             return res;
         else

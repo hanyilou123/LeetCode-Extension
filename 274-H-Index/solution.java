@@ -2,17 +2,12 @@ public class Solution {
     public int hIndex(int[] citations) {
         Arrays.sort(citations);
         int len = citations.length;
-        int[] newci = new int[len];
+        int hIndex = 0;
         for(int i=len-1; i>=0; i--)
         {
-            newci[len-1-i] = citations[i];
-        }
-        int hIndex = 0;
-        for(int i=0; i<len; i++)
-        {
-            if(i>=newci[i])
+            if(len-1-i>=citations[i])
             {
-                return i;
+                return len-1-i;
             }
         }
         return len;

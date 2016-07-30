@@ -11,8 +11,8 @@ public class Solution {
         }
         long num = numerator, den = denominator;
         num = Math.abs(num);
-        den = Math.abs(num);
-        res += num/den;
+        den = Math.abs(den);
+        res += String.valueOf(num/den);
         
         long rem = num%den*10;
         if(rem==0)
@@ -20,13 +20,12 @@ public class Solution {
         else
             res+=".";
             
-        Map<Integer, Integer> hash = new HashMap<Integer, Integer>();
+        Map<Long, Integer> hash = new HashMap<Long, Integer>();
         while(rem!=0)
         {
-            int quo = rem/den;
-            if(hash.containsKey(quo))
+            if(hash.containsKey(rem))
             {
-                int start = hash.get(quo);
+                int start = hash.get(rem);
                 String part1 = res.substring(0,start);
                 String part2 = res.substring(start, res.length());
                 res = part1+"("+part2+")";
@@ -34,8 +33,8 @@ public class Solution {
             }
             else
             {
-                hash.put(quo, res.length());
-                res += quo;
+                hash.put(rem, res.length());
+                res += String.valueOf(rem/den);
                 rem = rem%den*10;
             }
         }

@@ -5,16 +5,13 @@ public class Solution {
         for(int i=9; i<s.length(); i++)
         {
             String sub = s.substring(i-9, i+1); 
-            if(hash.containsKey(sub))
+            if(hash.get(sub)==null)
             {
-                if(hash.get(sub)==1)
-                {
-                    result.add(sub);
-                    hash.put(sub,2);
-                }
-            }
-            else{
                 hash.put(sub, 1);
+            }
+            else if(hash.get(sub)==1){
+                result.add(sub);
+                hash.put(sub,2);
             }
         }
         return result;

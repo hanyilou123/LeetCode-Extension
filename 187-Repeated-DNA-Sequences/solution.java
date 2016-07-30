@@ -1,24 +1,20 @@
 public class Solution {
     public List<String> findRepeatedDnaSequences(String s) {
         List<String> result = new ArrayList<String>();
-        Map<Integer, Integer> hash = new HashMap<Integer, Integer>();
-        int wd = 0;  //window
-        for(int i=0; i<s.length(); i++)
+        Map<String, Integer> hash = new HashMap<String, Integer>();
+        for(int i=9; i<s.length(); i++)
         {
-            wd = ((wd<<3) | (s.charAt(i) & 0x7)) & 0x3fffffff;
-            if(i<9)
-                continue;
-            if(hash.containsKey(wd))
+            String sub = s.substring(i-9, i+1); 
+            if(hash.containsKey(sub))
             {
-                if(hash.get(wd)==1)
+                if(hash.get(sub)==1)
                 {
-                    String sub = s.substring(i-9, i+1);
                     result.add(sub);
-                    hash.put(wd,2);
+                    hash.put(sub,2);
                 }
             }
             else{
-                hash.put(wd, 1);
+                hash.put(sub, 1);
             }
         }
         return result;

@@ -34,7 +34,7 @@ public class Solution {
                 que.offer(entry);
             }
         }
-        for(Map.Entry<Integer, Integer> entry: que.entrySet())
+        for(Map.Entry<Integer, Integer> entry: que)
         {
             res.add(entry.getKey());
         }

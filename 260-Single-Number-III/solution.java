@@ -9,7 +9,7 @@ public class Solution {
         int lastBit = (xor & (~xor+1));
         for(int i=0; i<nums.length; i++)
         {
-            if(lastBit & nums[i]==0)
+            if((lastBit & nums[i])==0)
                 res[0] ^= nums[i];
             else
                 res[1] ^= nums[i];

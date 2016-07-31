@@ -6,7 +6,7 @@ public class Solution {
             xor ^= nums[i];
         }
         int[] res = new int[2];
-        int lastBit = ((xor) & (~xor+1));
+        int lastBit = (xor & (~xor+1));
         for(int i=0; i<nums.length; i++)
         {
             if(lastBit & nums[i]==0)

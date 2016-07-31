@@ -10,7 +10,7 @@ public class Solution {
             {
                 bitnums[i] += (nums[j]>>i & 0x1);
             }
-            res |= (bitnums%3<<i);
+            res |= (bitnums[i]%3<<i);
         }
         return res;
     }

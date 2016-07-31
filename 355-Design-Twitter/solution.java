@@ -41,7 +41,7 @@ public class Twitter {
                     break;
                 if(followers.contains(curNode.userId))
                 {
-                    res.add(curNode);
+                    res.add(curNode.twitterId);
                     count++;
                 }
             }

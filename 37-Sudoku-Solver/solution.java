@@ -13,7 +13,7 @@ public class Solution {
                     continue;
                 for(int k=1; k<=9; k++)
                 {
-                    board[i][j] = '0'+k;
+                    board[i][j] = (char)('0'+k);
                     if(isValid(board, i, j) && solve(board))
                     {
                         return true;

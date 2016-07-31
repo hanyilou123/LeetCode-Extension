@@ -2,7 +2,7 @@ public class Solution {
     public void solveSudoku(char[][] board) {
         solve(board);
     }
-    public solve(char[][] board)
+    public boolean solve(char[][] board)
     {
         int h=board.length, w=board[0].length;
         for(int i=0; i<h; i++)

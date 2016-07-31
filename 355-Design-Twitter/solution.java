@@ -31,7 +31,7 @@ public class Twitter {
     /** Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent. */
     public List<Integer> getNewsFeed(int userId) {
         List<Integer> res = new LinkedList<Integer>();
-        if(!userManager.containsKey(userId))
+        if(userManager.containsKey(userId))
         {
             Set<Integer> followers = userManager.get(userId);
             int count=0;

@@ -23,7 +23,7 @@ public class Solution {
                     break;
                 if(found.containsKey(sub))
                 {
-                    found.put(sub, found.get(sub)+1)
+                    found.put(sub, found.get(sub)+1);
                 }
                 else{
                     found.put(sub, 1);

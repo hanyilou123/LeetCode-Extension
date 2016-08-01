@@ -16,6 +16,6 @@ public class Solution {
             if(head.val==val)
                 pre.next = pre.next.next;
         }
-        return dummy;
+        return dummy.next;
     }
 }

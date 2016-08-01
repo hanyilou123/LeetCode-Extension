@@ -20,6 +20,7 @@ public class Solution {
                 }
             }
         }
+        return result;
     }
     public boolean isPalindrome(String str)
     {

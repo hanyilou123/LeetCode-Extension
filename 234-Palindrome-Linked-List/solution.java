@@ -17,7 +17,7 @@ public class Solution {
             slow = slow.next;
             fast = fast.next.next;
         }
-        if(fast) //奇数
+        if(fast!=null) //奇数
         {
             slow = reverse(slow.next);
         }

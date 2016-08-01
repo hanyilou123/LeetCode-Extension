@@ -22,7 +22,7 @@ public class Solution {
                 if(i==j)
                     continue;
                 double slope = 0.0;
-                if(points[j].x==points.[i].x && points[j].y==points[i].y)
+                if(points[j].x==points[i].x && points[j].y==points[i].y)
                 {
                     dup++
                     continue;

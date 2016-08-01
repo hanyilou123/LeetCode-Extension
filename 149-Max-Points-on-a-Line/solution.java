@@ -24,7 +24,7 @@ public class Solution {
                 double slope = 0.0;
                 if(points[j].x==points[i].x && points[j].y==points[i].y)
                 {
-                    dup++
+                    dup++;
                     continue;
                 }
                 else if(points[j].x==points.[i].x)

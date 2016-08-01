@@ -10,7 +10,7 @@ public class Solution {
                 if(i!=j)
                 {
                     String temp = ""+words[i]+word[j];
-                    List<Integer> group = ArrayList<Integer>();
+                    List<Integer> group = new ArrayList<Integer>();
                     if(isPalindrome(temp))
                     {
                         group.add(i);

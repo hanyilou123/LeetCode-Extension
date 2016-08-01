@@ -4,7 +4,7 @@ public class Solution {
         if(words==null || words.length==0)
             return result;
         Map<String, Integer> hash = new HashMap<String, Integer>();
-        Set<String> wp = new HashSet<String>();
+        Set<Integer> wp = new HashSet<Integer>();
         for(int i=0; i<words.length; i++)
         {
             hash.put(words[i], i);

@@ -27,7 +27,7 @@ public class Solution {
                     dup++;
                     continue;
                 }
-                else if(points[j].x==points.[i].x)
+                else if(points[j].x==points[i].x)
                 {
                     slope = Integer.MAX_VALUE;
                 }

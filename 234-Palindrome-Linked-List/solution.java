@@ -34,7 +34,8 @@ public class Solution {
             ListNode temp = head.next;
             head.next = pre;
             pre = head;
-            head = temp
+            head = temp;
         }
+        return pre;
     }
 }

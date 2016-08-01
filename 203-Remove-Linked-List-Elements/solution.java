@@ -14,7 +14,14 @@ public class Solution {
         while(head!=null)
         {
             if(head.val==val)
-                pre.next = pre.next.next;
+            {
+                head = head.next;
+                pre.next = head;
+            }
+            else{
+                head = head.next;
+                pre = pre.next;
+            }
         }
         return dummy.next;
     }

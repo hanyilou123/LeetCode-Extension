@@ -25,6 +25,13 @@ public class Solution {
         {
             slow = reverse(slow);
         }
+        fast = head;
+        while(slow!=null)
+        {
+            if(slow.val!=fast.val)
+                return false;
+        }
+        return true;
     }
     public ListNode reverse(ListNode head)
     {

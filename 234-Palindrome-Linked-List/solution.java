@@ -17,6 +17,7 @@ public class Solution {
             slow = slow.next;
             fast = fast.next.next;
         }
+        
         if(fast!=null) //奇数
         {
             slow = reverse(slow.next);
@@ -30,13 +31,15 @@ public class Solution {
         {
             if(slow.val!=fast.val)
                 return false;
+            slow = slow.next;
+            fast = fast.next;
         }
         return true;
     }
     public ListNode reverse(ListNode head)
     {
         ListNode pre = null;
-        if(head!=null)
+        while(head!=null)
         {
             ListNode temp = head.next;
             head.next = pre;

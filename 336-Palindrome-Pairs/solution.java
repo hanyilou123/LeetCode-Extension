@@ -9,7 +9,7 @@ public class Solution {
             {
                 if(i!=j)
                 {
-                    String temp = ""+words[i]+word[j];
+                    String temp = ""+words[i]+words[j];
                     List<Integer> group = new ArrayList<Integer>();
                     if(isPalindrome(temp))
                     {

@@ -1,7 +1,7 @@
 public class Solution {
     public List<List<Integer>> palindromePairs(String[] words) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        if(words==null || words.length)
+        if(words==null || words.length==0)
             return result;
         for(int i=0; i<words.length; i++)
         {

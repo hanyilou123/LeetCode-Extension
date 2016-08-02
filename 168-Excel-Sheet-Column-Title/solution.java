@@ -5,11 +5,17 @@ public class Solution {
         for(int i=0; i<26; i++)
             alpha[i] = (char)('A'+i);
         int i=0;
-        while(i<(n/27))
+        if(n>26)
         {
-            res+="A";
+            while(i<(n/27))
+            {
+                res+="A";
+                i++;
+            }
+            res += alpha[n%26-1];
         }
-        res += alpha[n%26-1];
+        else
+            res += alpha[n-1];
         return res;
     }
 }

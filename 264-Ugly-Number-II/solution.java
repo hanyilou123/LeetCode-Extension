@@ -7,7 +7,8 @@ public class Solution {
         int index2=0, index3=0, index5=0;
         for(int i=1; i<n; i++)
         {
-            int min = Math.min(Math.min(part2, part3, part5));
+            int min = Math.min(Math.min(part2, part3), part5);
+            res[i] = min;
             if(min==part2)
                 part2=2*res[++index2];
             if(min==part3)

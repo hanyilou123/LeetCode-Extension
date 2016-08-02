@@ -9,7 +9,7 @@ public class Solution {
         {
             res+="A";
         }
-        res += alpha[n%27];
+        res += alpha[n%26-1];
         return res;
     }
 }

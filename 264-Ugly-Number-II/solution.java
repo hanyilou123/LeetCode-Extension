@@ -2,7 +2,7 @@ public class Solution {
     public int nthUglyNumber(int n) {
         if(n==1) return 1;
         PriorityQueue<Long> q = new PriorityQueue<Long>();
-        q.offer(1);
+        q.offer(1l);
         for(int i=1; i<n; i++)
         {
             long temp = q.poll();

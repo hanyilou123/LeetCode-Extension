@@ -18,7 +18,7 @@ public class Solution {
         }
         StringBuilder sb = new StringBuilder();
         int index=0;
-        while(num3[index]==0 && index<len3)
+        while(index<len3-1 && num3[index]==0)
             index++;
         while(index<len3)
         {

@@ -16,14 +16,14 @@ public class Solution {
             }
             num3[i+j+1]=carry;
         }
-        StringBuilder sb = new StringBuilder();
+        String result = "";
         int index=0;
         while(index<len3-1 && num3[index]==0)
             index++;
         while(index<len3)
         {
-            sb.append(num3[index++]);
+            result += (char)(num3[index++]+'0');
         }
-        return sb.toString();
+        return result;
     }
 }

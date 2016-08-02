@@ -1,15 +1,17 @@
 public class Solution {
     public boolean isUgly(int num) {
+        if(num<=0)
+            return false;
         if(num==1)
             return true;
-        while(nums>1)
+        while(num>1)
         {
-            if(nums%2==0)
-                nums /= 2;
-            else if(nums%3==0)
-                nums /= 3;
-            else if(nums%5==0)
-                nums /= 5;
+            if(num%2==0)
+                num /= 2;
+            else if(num%3==0)
+                num /= 3;
+            else if(num%5==0)
+                num /= 5;
             else
                 return false;
         }

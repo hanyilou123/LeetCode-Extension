@@ -1,17 +1,20 @@
 public class Solution {
     public int nthUglyNumber(int n) {
         if(n==1) return 1;
-        PriorityQueue<Long> q = new PriorityQueue<Long>();
-        q.offer(1l);
+        int[] res = new int[n];
+        res[0] = 1;
+        int part2=2, part3=3, part5=5;
+        int index2=0, index3=0, index5=0;
         for(int i=1; i<n; i++)
         {
-            long temp = q.poll();
-            while(!q.isEmpty() && q.peek()==temp)
-                temp = q.poll();
-            q.offer(temp*2);
-            q.offer(temp*3);
-            q.offer(temp*5);
+            int min = Math.min(Math.min(part2, part3, part5));
+            if(min==part2)
+                part2=2*res[++index2];
+            if(min==part3)
+                part3=3*res[++index3];
+            if(min==part5)
+                part5=5*res[++index5];
         }
-        return q.poll().intValue();
+        return res[n-1];
     }
 }

@@ -6,9 +6,7 @@ public class Solution {
         while(start+1<end)
         {
             long mid = (start+end)/2;
-            if(mid*mid=(long)x)
-                return (int)mid;
-            else if(mid*mid<x)
+            if(mid*mid<=x)
                 start=mid;
             else
                 end=mid;

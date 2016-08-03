@@ -6,9 +6,7 @@ public class Solution {
         while(start+1<end)
         {
             long mid = (start+end)/2;
-            if(mid*mid==temp)
-                return (int)mid;
-            else if(mid*mid<temp)
+            if(mid*mid<=temp)
                 start=mid;
             else
                 end=mid;

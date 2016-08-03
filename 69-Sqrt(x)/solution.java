@@ -7,7 +7,7 @@ public class Solution {
         {
             long mid = (start+end)/2;
             if(mid*mid==temp)
-                return mid;
+                return (int)mid;
             else if(mid*mid<temp)
                 start=mid;
             else

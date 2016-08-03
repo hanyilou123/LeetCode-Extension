@@ -17,7 +17,7 @@ public class Solution {
             int index = k/factor[n-i];
             sb.append(nums.get(index));
             nums.remove(index);
-            k-=index*factor[n-1];
+            k-=index*factor[n-i];
         }
         return sb.toString();
     }

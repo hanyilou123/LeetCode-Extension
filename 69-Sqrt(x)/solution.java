@@ -6,15 +6,15 @@ public class Solution {
         while(start+1<end)
         {
             long mid = (start+end)/2;
-            if(mid*mid=x)
-                return mid;
+            if(mid*mid=(long)x)
+                return (int)mid;
             else if(mid*mid<x)
                 start=mid;
             else
                 end=mid;
         }
         if(end*end<=x)
-            return end;
-        return start;
+            return (int)end;
+        return (int)start;
     }
 }

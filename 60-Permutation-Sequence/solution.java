@@ -1,7 +1,7 @@
 public class Solution {
     public String getPermutation(int n, int k) {
         StringBuilder sb = new StringBuilder();
-        List<Integer> nums = new ArrayList<Integer>();
+        List<Integer> nums = new LinkedList<Integer>();
         int[] factor = new int[n+1];
         factor[0]=1;
         int pro=1;

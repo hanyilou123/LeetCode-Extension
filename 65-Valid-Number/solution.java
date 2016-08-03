@@ -1,7 +1,7 @@
 public class Solution {
     public boolean isNumber(String s) {
+        s=s.trim();
         boolean numSeen=false, eSeen=false, pointSeen=false, numAfterE=true;
-        s.trim();
         for(int i=0; i<s.length(); i++)
         {
             char c=s.charAt(i);
@@ -27,7 +27,7 @@ public class Solution {
                 eSeen=true;
                 numAfterE=false;
             }
-            else if(c=='+' || c=="-")
+            else if(c=='+' || c=='-')
             {
                 if(i!=0 && s.charAt(i-1)!='e')
                     return false;

@@ -3,7 +3,7 @@ public class Solution {
         if(n<4)
             return n-1;
         int res=1;
-        while(n>3)
+        while(n>2)
         {
             res *=3;
             n -=3;
@@ -14,5 +14,6 @@ public class Solution {
             return res/3*4;
         if(n==2)
             return res*2;
+        return 0;
     }
 }

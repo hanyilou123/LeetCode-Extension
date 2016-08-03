@@ -4,23 +4,13 @@ public class Solution {
             n=10;
         if(n==0)
             return 1;
-        int result=0;
-        for(int i=1; i<=n; i++)
+        int result=10, temp=9;
+        for(int i=2; i<=n; i++)
         {
-            int bigrow=9;
-            if(i==1)
-                bigrow=10;
-            else
-            {
-                int j=9;
-                while(i+j>10)
-                {
-                    bigrow *= j;
-                    j--;
-                }
-            }
-            result += bigrow;
+            temp *= (11-i);
+            result += temp;
         }
+        
         return result;
     }
 }

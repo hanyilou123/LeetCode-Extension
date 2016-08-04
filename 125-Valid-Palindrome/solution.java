@@ -7,6 +7,8 @@ public class Solution {
         {
             while(i<s.length() && i<j && (s.charAt(i)<'A' || (s.charAt(i)>'Z' && s.charAt(i)<'a') || s.charAt(i)>'z'))
                 i++;
+            if(i==s.length())
+                return true;
             while(j>=0 && i<j && (s.charAt(j)<'A' || (s.charAt(j)>'Z' && s.charAt(j)<'a') || s.charAt(j)>'z'))
                 j--;
             if(s.charAt(i)==s.charAt(j) || s.charAt(i)==(char)(s.charAt(j)+32) || s.charAt(i)==(char)(s.charAt(j)-32))

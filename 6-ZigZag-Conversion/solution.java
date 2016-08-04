@@ -10,7 +10,7 @@ public class Solution {
         {
             for(int j=0; j<numRows && i<len; j++)
                 sb[j].append(toArray[i++]);
-            for(int j=numRows-2; j>=1 && i<len; j++)
+            for(int j=numRows-2; j>=1 && i<len; j--)
                 sb[j].append(toArray[i++]);
         }
         for(int k=1; k<numRows; k++)

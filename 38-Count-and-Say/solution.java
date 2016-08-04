@@ -13,7 +13,7 @@ public class Solution {
                     count++;
                     i++;
                 }
-                sb.append(String.valueOf(count)+String.valueOf(oldArray[i+1]));
+                sb.append(String.valueOf(count)+String.valueOf(oldArray[i]));
             }
             oldString = sb;
             n--;

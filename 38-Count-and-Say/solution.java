@@ -4,15 +4,16 @@ public class Solution {
         while(n>1)
         {
             StringBuilder sb = new StringBuilder();
-            for(int i=0; i<oldString.length(); i++)
+            char[] oldArray = olderString.toCharArray();
+            for(int i=0; i<oldArray.length; i++)
             {
                 int count=1;
-                while(i+1<oldString.length() && oldString.charAt(i)==oldString.charAt(i+1))
+                while(i+1<oldArray.length && oldArray[i]==oldArray[i+1])
                 {
                     count++;
                     i++;
                 }
-                sb.append(String.valueOf(count)+String.valueOf(oldString.charAt(i)));
+                sb.append(String.valueOf(count)+String.valueOf(oldArray[i+1]));
             }
             oldString = sb;
             n--;

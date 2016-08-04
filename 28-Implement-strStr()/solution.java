@@ -2,7 +2,7 @@ public class Solution {
     public int strStr(String haystack, String needle) {
         if(haystack==null || needle==null)
             return -1;
-        for(int i=0; i<=haystack.length()-needle.length; i++)
+        for(int i=0; i<=haystack.length()-needle.length(); i++)
         {
             int j=0;
             for(j=0; j<needle.length(); j++)

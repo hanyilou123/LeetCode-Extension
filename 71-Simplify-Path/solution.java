@@ -2,7 +2,7 @@ public class Solution {
     public String simplifyPath(String path) {
         String result = "/";
         String[] splitStr = path.split("/");
-        List<String> temp = new ArrayList<String>();
+        List<String> temp = new ArrayList<String>();  //从LinkedList改为ArrayList，从25％到46％
         
         for(String s: splitStr)
         {

@@ -4,7 +4,7 @@ public class Solution {
             return 0;
         int maxlen=0;
         int[] dp = new int[s.length()];
-        for(int i=s.length()-2; i>=0; i++)
+        for(int i=s.length()-2; i>=0; i--)
         {
             if(s.charAt(i)=='(')
             {

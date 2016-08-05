@@ -3,6 +3,7 @@ public class Solution {
         List<String> result = new ArrayList<String>();
         if(s==null || s.length()==0)
             return result;
+        int len = s.length();
         for(int i=1; i<4 && i<len-2; i++)
         {
             for(int j=i+1; j<i+4 && j<len-1; j++)

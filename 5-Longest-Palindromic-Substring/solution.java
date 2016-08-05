@@ -13,7 +13,7 @@ public class Solution {
     }
     public void process(String str, int s, int e)
     {
-        if(s>=0 && e<str.length() && str.charAt(s)==str.charAt(e))
+        while(s>=0 && e<str.length() && str.charAt(s)==str.charAt(e))
         {
             s--;
             e++;

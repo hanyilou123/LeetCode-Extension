@@ -6,7 +6,7 @@ public class Solution {
         int[] dp = new int[s.length()];
         for(int i=s.length()-2; i>=0; i++)
         {
-            if(s.chatAt(i)=='(')
+            if(s.charAt(i)=='(')
             {
                 int end = i+dp[i+1]+1;
                 if(end<s.length() && s.charAt(end)==')')

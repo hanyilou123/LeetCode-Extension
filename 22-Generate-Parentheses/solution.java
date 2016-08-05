@@ -4,9 +4,9 @@ public class Solution {
         backTrack(result, 0, 0, "", n);
         return result;
     }
-    public backTrack(List<String> result, int open, int close, String str, int max)
+    public void backTrack(List<String> result, int open, int close, String str, int max)
     {
-        if(str.length()==max)
+        if(str.length()==max*2)
         {
             result.add(str);
             return;

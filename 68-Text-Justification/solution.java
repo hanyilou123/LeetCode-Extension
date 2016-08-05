@@ -7,7 +7,7 @@ public class Solution {
         int count=0;
         for(int i=0; i<words.length; i++)
         {
-            if(words[i].length()+sb.size()<=maxWidth)
+            if(words[i].length()+sb.length()<=maxWidth)
             {
                 sb.append(words[i]+" ");
                 count++;

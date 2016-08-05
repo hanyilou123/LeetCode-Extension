@@ -2,7 +2,7 @@ public class Solution {
     public String simplifyPath(String path) {
         String result = "/";
         String[] splitStr = path.split("/");
-        List<String> temp = new LinkedList<String>();
+        List<String> temp = new ArrayList<String>();
         
         for(String s: splitStr)
         {

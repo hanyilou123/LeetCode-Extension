@@ -20,7 +20,7 @@ public class Solution {
         }
         if(maxlen<e-s-1)
         {
-            start = s++;
+            start = s+1;
             maxlen = e-s-1;
         }
     }

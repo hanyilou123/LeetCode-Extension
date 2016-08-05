@@ -4,7 +4,7 @@ public class Solution {
         if(s.length()<2)
             return s;
         int len = s.length();
-        for(int i=0; i<len; i++)
+        for(int i=0; i<len-1; i++)
         {
             process(s, i, i);     //assume odd length
             process(s, i, i+1);   //assume even length

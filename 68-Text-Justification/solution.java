@@ -24,7 +24,8 @@ public class Solution {
                 }
                 String[] temp = sb.toString().trim().split(" ");
                 StringBuilder row = new StringBuilder();
-                for(int j=0; j<more; j++)
+                int j =0;
+                for(j=0; j<more; j++)
                 {
                     row.append(temp[j]+eveStr+" ");
                 }

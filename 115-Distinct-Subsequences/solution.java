@@ -1,0 +1,23 @@
+public class Solution {
+    public int numDistinct(String s, String t) {
+        if(s==null || t==null)
+            return 0;
+        int ls=s.length(), lt=t.length();
+        int[][] dp = new int[ls+1][lt+1];
+        for(int i=0; i<=ls; i++)
+            dp[i][0] = 1;
+            
+        for(int i=1; i<=ls; i++)
+        {
+            for(int j=1; j<lt; j++)
+            {
+                dp[i][j] += dp[i-1][j];
+                if(s.charAt(i)==t.charAt(j))
+                {
+                    dp[i][j] += dp[i-1][j-1];
+                }
+            }
+        }
+        return dp[ls][lt];
+    }
+}

@@ -8,7 +8,7 @@ public class Solution {
         for(int i=0; i<s1.length(); i++)
         {
             sum[s1.charAt(i)-'a']++;
-            sum[s2.charAt(j)-'a']--;
+            sum[s2.charAt(i)-'a']--;
         }
         for(int i=0; i<26; i++)
         {

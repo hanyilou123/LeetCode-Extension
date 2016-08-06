@@ -1,5 +1,6 @@
 public class Solution {
     public int minDistance(String word1, String word2) {
+        // http://www.cnblogs.com/yuzhangcmu/p/4190264.html
         int l1=word1.length(), l2=word2.length();
         int[][] minD = new int[l1+1][l2+1];
         for(int i=0; i<=l2; i++)

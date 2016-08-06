@@ -12,7 +12,7 @@ public class Solution {
             for(int j=1; j<=lt; j++)
             {
                 dp[i][j] += dp[i-1][j];
-                if(s.charAt(i)==t.charAt(j))
+                if(s.charAt(i-1)==t.charAt(j-1))
                 {
                     dp[i][j] += dp[i-1][j-1];
                 }

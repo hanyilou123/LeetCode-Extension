@@ -9,15 +9,15 @@ public class Solution {
             
         for(int i=1; i<=l1; i++)
         {
-            for(int j=1; j<l2; j++)
+            for(int j=1; j<=l2; j++)
             {
-                if(word1.charAt(i)==word2.charAt(j))
+                if(word1.charAt(i-1)==word2.charAt(j-1))
                 {
                     minD[i][j] = minD[i-1][j-1];
                 }
                 else
                 {
-                    minD[i][j] = Math.min(minD[i-1][j-1], Math.min(minD[i-1][j], minD[i][j-1]));
+                    minD[i][j] = 1 + Math.min(minD[i-1][j-1], Math.min(minD[i-1][j], minD[i][j-1]));
                 }
             }
         }

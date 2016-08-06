@@ -9,7 +9,7 @@ public class Solution {
             
         for(int i=1; i<=ls; i++)
         {
-            for(int j=1; j<lt; j++)
+            for(int j=1; j<=lt; j++)
             {
                 dp[i][j] += dp[i-1][j];
                 if(s.charAt(i)==t.charAt(j))

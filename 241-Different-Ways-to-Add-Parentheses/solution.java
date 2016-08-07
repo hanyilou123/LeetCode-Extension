@@ -26,7 +26,7 @@ public class Solution {
                 }
             }
         }
-        if(res.size()==0)
+        if(res.size()==0 && !input.equals(""))
             res.add(Integer.valueOf(input));
         return res;
     }

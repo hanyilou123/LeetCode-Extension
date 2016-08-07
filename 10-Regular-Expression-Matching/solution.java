@@ -26,7 +26,7 @@ public class Solution {
                 return isMatch(s.substring(1), p.substring(1));
             }
             else
-                return false
+                return false;
         }
     }
     public boolean checkEmpty(String s)

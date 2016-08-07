@@ -1,6 +1,6 @@
 public class Solution {
     public List<Integer> diffWaysToCompute(String input) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> res = new LinkedList<Integer>();
         for(int i=0; i<input.length(); i++)
         {
             if(input.charAt(i)=='+' || input.charAt(i)=='-' || input.charAt(i)=='/')

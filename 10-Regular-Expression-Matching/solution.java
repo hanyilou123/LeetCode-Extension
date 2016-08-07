@@ -1,8 +1,8 @@
 public class Solution {
     public boolean isMatch(String s, String p) {
-        if(s.length==0)
+        if(s.length()==0)
             return checkEmpty(p);
-        if(p.length==0)
+        if(p.length()==0)
             return false;
         char c1=s.charAt(0);
         char d1=p.charAt(0), d2='0';

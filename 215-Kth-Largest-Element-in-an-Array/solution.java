@@ -2,7 +2,7 @@ public class Solution {
     public int findKthLargest(int[] nums, int k) {
         if(nums==null || nums.length==0 || k<=0)
             return 0;
-        return helper();
+        return helper(nums, 0, nums.length, nums.length-k+1);
     }
     public int helper(int[] nums, int l, int r, int k)
     {

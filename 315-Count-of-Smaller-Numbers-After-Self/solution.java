@@ -1,6 +1,7 @@
 public class Solution {
     public List<Integer> countSmaller(int[] nums) {
         List<Integer> sorted = new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<Integer>();
         if(nums==null || nums.length==0)
             return sorted;
         int len = nums.length;
@@ -8,10 +9,11 @@ public class Solution {
         for(int i=nums.length-1; i>=0; i--)
         {
             int index = findIndex(sorted, nums[i]);
-            ans[i] = index;
+            //  ans[i] = index;
+            result.add(0, index);
             sorted.add(index, nums[i]);
         }
-        return Arrays.asList(ans);
+        return result;
     }
     public int findIndex(List<Integer> sorted, int target)
     {

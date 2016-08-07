@@ -11,8 +11,7 @@ public class Solution {
             ans[i] = index;
             sorted.add(index, nums[i]);
         }
-        List<Integer> res = Arrays.asList(ans);
-        return res;
+        return Arrays.asList(ans);
     }
     public int findIndex(List<Integer> sorted, int target)
     {

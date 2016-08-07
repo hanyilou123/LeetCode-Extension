@@ -1,7 +1,7 @@
 public class Solution {
     public boolean isMatch(String s, String p) {
-        if(s.length()==0)
-            return checkEmpty(p);
+        // if(s.length()==0)
+        //     return checkEmpty(p);
         if(p.length()==0)
             return false;
         char c1=s.charAt(0);

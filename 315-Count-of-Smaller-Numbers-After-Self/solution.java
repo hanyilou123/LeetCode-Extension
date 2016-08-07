@@ -2,13 +2,14 @@ public class Solution {
     public List<Integer> countSmaller(int[] nums) {
         List<Integer> sorted = new ArrayList<Integer>();
         if(nums==null || nums.length==0)
-            return result;
+            return sorted;
         int len = nums.length;
         int[] ans = new int[len];
         for(int i=nums.length-1; i>=0; i--)
         {
             int index = findIndex(sorted, nums[i]);
             ans[i] = index;
+            sorted.add(index, nums[i]);
         }
     }
     public int findIndex(List<Integer> sorted, int target)

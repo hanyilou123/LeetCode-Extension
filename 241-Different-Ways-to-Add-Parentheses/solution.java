@@ -3,7 +3,7 @@ public class Solution {
         List<Integer> res = new LinkedList<Integer>();
         for(int i=0; i<input.length(); i++)
         {
-            if(input.charAt(i)=='+' || input.charAt(i)=='-' || input.charAt(i)=='/')
+            if(input.charAt(i)=='+' || input.charAt(i)=='-' || input.charAt(i)=='*')
             {
                 String part1 = input.substring(0, i);
                 String part2 = input.substring(i);

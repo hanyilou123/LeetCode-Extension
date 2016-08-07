@@ -15,7 +15,7 @@ public class Solution {
         }
         else if(pos+1<k)
         {
-            return helper(nums, pos+1, right, k);
+            return helper(nums, pos+1, r, k);
         }
         else
         {

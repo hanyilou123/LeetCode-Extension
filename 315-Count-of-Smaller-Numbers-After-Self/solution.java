@@ -14,7 +14,7 @@ public class Solution {
     }
     public int findIndex(List<Integer> sorted, int target)
     {
-        if(sorted.size==0)
+        if(sorted.size()==0)
             return 0;
         int start=0, end=sorted.size()-1;
         if(sorted.get(end)<target)

@@ -6,7 +6,7 @@ public class Solution {
             if(input.charAt(i)=='+' || input.charAt(i)=='-' || input.charAt(i)=='*')
             {
                 String part1 = input.substring(0, i);
-                String part2 = input.substring(i);
+                String part2 = input.substring(i+1);
                 List<Integer> r1 = diffWaysToCompute(part1);
                 List<Integer> r2 = diffWaysToCompute(part2);
                 for(Integer p1: r1)

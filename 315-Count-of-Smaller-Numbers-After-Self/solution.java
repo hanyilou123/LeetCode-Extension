@@ -1,7 +1,7 @@
 public class Solution {
     public List<Integer> countSmaller(int[] nums) {
         List<Integer> sorted = new ArrayList<Integer>();
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> result = new LinkedList<Integer>();
         if(nums==null || nums.length==0)
             return sorted;
         int len = nums.length;

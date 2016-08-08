@@ -8,7 +8,7 @@ public class Solution {
         }
         return countWhileMerge(sums, 0, n+1, lower, upper);
     }
-    public int countWhileMerge(long[] sums, int start, int end, int lower, upper)
+    public int countWhileMerge(long[] sums, int start, int end, int lower, int upper)
     {
         if(end-start<=1)
             return 0;

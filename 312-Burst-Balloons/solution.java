@@ -11,18 +11,21 @@ public class Solution {
         }
         newNums[0]=newNums[n++]=1;
         
-        int[][] dp = new int[n][n];
-        for(int k=2; k<n; k++)
+        int[][] memo = new int[n][n];
+        return burst(memo, newNums, 0, n-1);
+    }
+    public int burst(int[][] memo, int[] newNums, int left, int right)
+    {
+        if(left+1==right)
+            return 0;
+        if(memo[left][right]>0)
+            return memo[left][right];
+        int ans = 0;
+        for(int i=left+1; i<right; i++)
         {
-            for(int left=0; left+k<n; left++)
-            {
-                int right = left+k;
-                for(int i=left+1; i<right; i++)
-                {
-                    dp[left][right] = Math.max(dp[left][right], newNums[left]*newNums[i]*newNums[right]+dp[left][i]+dp[i][right]);
-                }
-            }
+            ans = Math.max(ans, newNums[left]*newNums[i]*newNums[right]+burst(memo, newNums, left, i)+burst(memo, newNums, i, right));
         }
-        return dp[0][n-1];
+        memo[left][right] = ans;
+        return ans;
     }
 }

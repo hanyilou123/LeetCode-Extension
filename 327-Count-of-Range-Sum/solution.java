@@ -20,7 +20,7 @@ public class Solution {
         {
             while(k<end && sums[k]-sums[i]<lower)
                 k++;
-            while(j<end && sums[j]-sum[i]<=upper)
+            while(j<end && sums[j]-sums[i]<=upper)
                 j++;
             while(t<end && sums[t]<sums[i])
                 cache[r++]=sums[t++];

@@ -50,7 +50,7 @@ public class Solution {
         }
     }
 }
-public class TreeNode{
+class TreeNode{
     int num;
     int val;
     TreeNode left, right;

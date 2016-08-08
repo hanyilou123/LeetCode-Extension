@@ -1,13 +1,3 @@
-public class TreeNode{
-    int num;
-    int val;
-    TreeNode left, right;
-    TreeNode(int x)
-    {
-        val=x;
-        num=0;
-    }
-}
 public class Solution {
     public List<Integer> countSmaller(int[] nums) {
         if(nums==null || nums.length==0)
@@ -58,5 +48,15 @@ public class Solution {
                 return getNum(root.right, target, num);
             }
         }
+    }
+}
+public class TreeNode{
+    int num;
+    int val;
+    TreeNode left, right;
+    TreeNode(int x)
+    {
+        val=x;
+        num=0;
     }
 }

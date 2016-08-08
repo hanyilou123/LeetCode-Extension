@@ -1,39 +1,62 @@
+public class TreeNode{
+    int num;
+    int val;
+    TreeNode left, right;
+    TreeNode(int x)
+    {
+        val=x;
+        num=0;
+    }
+}
 public class Solution {
     public List<Integer> countSmaller(int[] nums) {
-        List<Integer> sorted = new ArrayList<Integer>();
-        List<Integer> result = new LinkedList<Integer>();
         if(nums==null || nums.length==0)
-            return sorted;
-        int len = nums.length;
-        int[] ans = new int[len];
+            return new ArrayList<Integer>();
+        List<Integer> list1 = new ArrayList<Integer>();
+        List<Integer> list2 = new ArrayList<Integer>();
+        TreeNode root = new TreeNode(nums[nums.length-1]);
+        root.num=1;
+        list1.add(0);
+        for(int i=nums.length-2; i>=0; i--)
+        {
+            int num = getNum(root, nums[i], 0);
+            list1.add(num);
+        }
         for(int i=nums.length-1; i>=0; i--)
         {
-            int index = findIndex(sorted, nums[i]);
-            //  ans[i] = index;
-            result.add(0, index);
-            sorted.add(index, nums[i]);
+            list2.add(list1.get(i));
         }
-        return result;
+        return list2;
     }
-    public int findIndex(List<Integer> sorted, int target)
+    public int getNum(TreeNode root, int target, int num)
     {
-        if(sorted.size()==0)
-            return 0;
-        int start=0, end=sorted.size()-1;
-        if(sorted.get(end)<target)
-            return end+1;
-        if(sorted.get(start)>target)
-            return 0;
-        while(start+1<end)
+        if(root.val>=val)
         {
-            int mid = (start+end)/2;
-            if(sorted.get(mid)<target)
-                start=mid+1;
-            else
-                end =mid;
+            root.num=root.num+1;
+            if(root.left==null)
+            {
+                TreeNode node = new TreeNode(target);
+                root.num=1;
+                root.left = node;
+                return num;
+            }
+            else{
+                return getNum(root.left, target, num);
+            }
         }
-        if(sorted.get(start)>=target)
-            return start;
-        return end;
+        else
+        {
+            num +=root.num;
+            if(root.right==null)
+            {
+                TreeNode node = new TreeNode(target);
+                node.num=1;
+                root.right = node;
+                return num;
+            }
+            else{
+                return getNum(root.right, target, num);
+            }
+        }
     }
 }

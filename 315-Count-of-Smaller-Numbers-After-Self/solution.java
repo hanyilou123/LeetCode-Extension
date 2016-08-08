@@ -20,13 +20,13 @@ public class Solution {
     }
     public int getNum(TreeNode root, int target, int num)
     {
-        if(root.val>=val)
+        if(root.val>=target)
         {
             root.num=root.num+1;
             if(root.left==null)
             {
                 TreeNode node = new TreeNode(target);
-                root.num=1;
+                node.num=1;
                 root.left = node;
                 return num;
             }

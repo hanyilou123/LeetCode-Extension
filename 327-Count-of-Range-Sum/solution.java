@@ -1,6 +1,6 @@
 public class Solution {
     public int countRangeSum(int[] nums, int lower, int upper) {
-        int n = nums.length();
+        int n = nums.length;
         long[] sums = new long[n+1];
         for(int i=0; i<nums.length; i++)
         {

@@ -4,6 +4,7 @@ public class Solution {
         if(num==null || num.length()==0)
             return rest;
         helper(rest, num, "", target, 0, 0, 0);
+        return rest;
     }
     public void helper(List<String> rest, String num, String path, int target, int pos, long curRes, long preNum)
     {

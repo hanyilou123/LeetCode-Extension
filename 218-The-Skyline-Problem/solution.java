@@ -14,7 +14,7 @@ public class Solution {
     }
     public List<int[]> getSkyline(int[][] buildings) {
         List<int[]> res = new ArrayList<int[]>();
-        PriorityQueue<Integer> BigHeap = new PriorityQueue<Integer>(new ArrayCom());
+        PriorityQueue<Integer> BigHeap = new PriorityQueue<Integer>(11, new ArrayCom());
         
         List<int[]> recordVer = new ArrayList<int[]>();
         for(int i=0; i<buildings.length; i++)

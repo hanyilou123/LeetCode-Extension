@@ -14,16 +14,16 @@ public class Solution {
     }
     public List<int[]> getSkyline(int[][] buildings) {
         List<int[]> res = new ArrayList<int[]>();
-        PriorityQueue<Integer> BigHeap = new PriorityQueue<Integer>(11, new ArrayCom());
+        PriorityQueue<Integer> BigHeap = new PriorityQueue<Integer>(11,new MaxHight());
         
         List<int[]> recordVer = new ArrayList<int[]>();
         for(int i=0; i<buildings.length; i++)
         {
             int[] temp = buildings[i];
             recordVer.add(new int[]{temp[0], temp[2]});
-            recordVer.add(new int[]{temp[0], -temp[2]});
+            recordVer.add(new int[]{temp[1], -temp[2]});
         }
-        Collections.sort(recordVer, new MaxHight());
+        Collections.sort(recordVer, new ArrayCom());
         int cur=0, pre=0;
         for(int i=0; i<recordVer.size(); i++)
         {
@@ -36,7 +36,7 @@ public class Solution {
             else
             {
                 BigHeap.remove(-temp[1]);
-                cur = BigHeap.peek()==null?0:BigHeap.peek();
+                cur = (BigHeap.peek()==null?0:BigHeap.peek());
             }
             if(cur!=pre)
             {

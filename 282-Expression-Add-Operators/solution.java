@@ -12,17 +12,17 @@ public class Solution {
             rest.add(path);
         for(int i=pos; i<num.length(); i++)
         {
-            if(i!=pos && num.charAt(i)=='0')
+            if(i!=pos && num.charAt(pos)=='0')
                 break;
             long curNum = Long.parseLong(num.substring(pos, i+1));
             if(pos==0)
             {
-                helper(rest, num, path+curNum, target, pos+i, curNum, curNum);
+                helper(rest, num, path+curNum, target, i+1, curNum, curNum);
             }
             else{
-                helper(rest, num, path+"+"+curNum, target, pos+i, curRes+curNum, curNum);
-                helper(rest, num, path+"-"+curNum, target, pos+i, curRes-curNum, -curNum);
-                helper(rest, num, path+"*"+curNum, target, pos+i, curRes-preNum+preNum*curNum, preNum*curNum);
+                helper(rest, num, path+"+"+curNum, target, i+1, curRes+curNum, curNum);
+                helper(rest, num, path+"-"+curNum, target, i+1, curRes-curNum, -curNum);
+                helper(rest, num, path+"*"+curNum, target, i+1, curRes-preNum+preNum*curNum, preNum*curNum);
             }
         }
     }

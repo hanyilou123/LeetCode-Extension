@@ -5,7 +5,7 @@ public class Solution {
             return rest;
         helper(rest, num, "", target, 0, 0, 0);
     }
-    public void helper(List<String> rest, String num, String path, int target, int pos, int curRes, int preNum)
+    public void helper(List<String> rest, String num, String path, int target, int pos, long curRes, long preNum)
     {
         if(pos==num.length() && curRes==target)
             rest.add(path);

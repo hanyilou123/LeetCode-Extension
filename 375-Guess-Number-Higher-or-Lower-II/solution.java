@@ -9,10 +9,10 @@ public class Solution {
             return 0;
         if(dp[start][end]!=0)
             return dp[start][end];
-        int minVal = 0;
+        int minVal = Integer.MAX_VALUE;
         for(int i=start; i<=end; i++)
         {
-            int temp = i + Math.max(dpProcess(start, i-1), dpProcess(i+1, end));
+            int temp = i + Math.max(dpProcess(dp, start, i-1), dpProcess(dp, i+1, end));
             minVal = Math.min(minVal, temp);
         }
         dp[start][end] = minVal;

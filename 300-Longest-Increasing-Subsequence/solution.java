@@ -1,7 +1,7 @@
 public class Solution {
    public int lengthOfLIS(int[] nums) {
-        int[] maxLen = new int[nums.length+1];
-        maxlen[0] = -1;
+        int[] maxlen = new int[nums.length+1];
+        maxlen[0] = Integer.MIN_VALUE;
         for(int i=1; i<=nums.length; i++)
         {
             maxlen[i]=Integer.MAX_VALUE;
@@ -18,7 +18,7 @@ public class Solution {
         }
         return 0;
     }
-    public int binarySearch(int[] maxLen, int target)
+    public int binarySearch(int[] maxlen, int target)
     {
         int start=0, end=maxlen.length-1;
         while(start<end)

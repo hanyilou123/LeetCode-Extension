@@ -4,12 +4,12 @@ public class Solution {
             return 0;
         int len=citations.length;
         int start=0, end =len;
-        while(start<=end)
+        while(start<end)
         {
             int mid = start+(end-start)/2;
             if(len-mid==citations[mid])
                 return len-mid;
-            else if(len-mid<citations[mid])
+            else if(len-mid>citations[mid])
                 start=mid+1;
             else
                 end = mid;

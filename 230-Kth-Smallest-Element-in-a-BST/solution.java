@@ -10,12 +10,12 @@
 public class Solution {
     public int kthSmallest(TreeNode root, int k) {
         int leftNo = countProcess(root.left);
-        if(leftNo==k+1)
-            return root.val;
-        else if(leftNo>=k)
+        if(leftNo>=k)
             return kthSmallest(root.left, k);
-        else 
+        else if(k>leftNo+1)
             return kthSmallest(root.right, k-leftNo-1);
+        else
+            return root.val;
     }
     public int countProcess(TreeNode root)
     {

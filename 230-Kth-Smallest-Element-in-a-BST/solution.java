@@ -17,7 +17,7 @@ public class Solution {
         else 
             return kthSmallest(root.right, k-leftNo-1);
     }
-    public void countProcess(TreeNode root)
+    public int countProcess(TreeNode root)
     {
         if(root==null)
             return 0;

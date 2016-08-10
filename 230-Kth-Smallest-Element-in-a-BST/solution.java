@@ -17,11 +17,11 @@ public class Solution {
         }
         while(k!=0)
         {
-            TreeNode root = st.pop();
+            TreeNode temp = st.pop();
             k--;
             if(k==0)
-                return root.val;
-            TreeNode right = root.right;
+                return temp.val;
+            TreeNode right = temp.right;
             while(right!=null)
             {
                 st.push(right);

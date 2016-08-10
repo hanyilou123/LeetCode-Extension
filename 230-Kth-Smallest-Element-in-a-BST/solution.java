@@ -9,18 +9,25 @@
  */
 public class Solution {
     public int kthSmallest(TreeNode root, int k) {
-        int leftNo = countProcess(root.left);
-        if(leftNo>=k)
-            return kthSmallest(root.left, k);
-        else if(k>leftNo+1)
-            return kthSmallest(root.right, k-leftNo-1);
-        else
-            return root.val;
-    }
-    public int countProcess(TreeNode root)
-    {
-        if(root==null)
-            return 0;
-        return 1+countProcess(root.left)+countProcess(root.right);
+        Stack<TreeNode> st = new Stack<TreeNode>();
+        while(root!=null)
+        {
+            st.push(root);
+            root=root.left;
+        }
+        while(k!=0)
+        {
+            TreeNode root = st.pop();
+            k--;
+            if(k==0)
+                return root.val;
+            TreeNode right = root.right;
+            while(right!=null)
+            {
+                st.push(right);
+                right=right.left;
+            }
+        }
+        return -1;
     }
 }

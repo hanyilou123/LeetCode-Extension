@@ -16,7 +16,7 @@ public class Solution {
         countProcess(root, k);
         return res;
     }
-    public int countProcess(TreeNode root, int k)
+    public void countProcess(TreeNode root, int k)
     {
         if(root.left!=null)
             countProcess(root.left, k);

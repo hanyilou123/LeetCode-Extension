@@ -27,6 +27,6 @@ public class Solution {
             return;
         }
         if(root.right!=null)
-            countProcess(root.rigth, k);
+            countProcess(root.right, k);
     }
 }

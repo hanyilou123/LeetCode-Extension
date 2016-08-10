@@ -12,7 +12,7 @@ public class Solution {
             {
                 if(maxHeap.size()>=k)
                 {
-                    if(matrix[i][j]<maxHeap.heap())
+                    if(matrix[i][j]<maxHeap.peek())
                     {
                         maxHeap.poll();
                         maxHeap.offer(matrix[i][j]);

@@ -12,7 +12,7 @@ public class Solution {
             return 0;
         Arrays.sort(envelopes, new sortEnv());
         int[] dp = new int[envelopes.length];
-        int len=0
+        int len=0;
         for(int i=0; i<envelopes.length; i++)
         {
             int index = Arrays.binarySearch(dp, 0, len, envelopes[i]);

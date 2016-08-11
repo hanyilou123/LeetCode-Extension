@@ -9,13 +9,23 @@
  */
 public class Solution {
     public int rob(TreeNode root) {
+        
+        Map<TreeNode, Integer> hash = new HashMap<TreeNode, Integer>();
+        return robSub(root, hash);
+    }
+    public int robSub(TreeNode root, Map<TreeNode, Integer> hash)
+    {
         if(root==null)
             return 0;
-        int val=0;
+        if(hash.containsKey(root))
+            return hash.get(root);
+        int val;
         if(root.left!=null)
-            val += rob(root.left.left) + rob(root.left.right);
+            val += rob(root.left.left, hash) + rob(root.left.right, hash);
         if(root.right!=null)
-            val += rob(root.right.left) + rob(root.right.right);
-        return Math.max(val+root.val, rob(root.left)+rob(root.right));
+            val += rob(root.right.left, hash) + rob(root.right.right, hash);
+        val = Math.max(val+root.val, rob(root.left, hash)+rob(root.right, hash));
+        hash.put(root, val);
+        return val;
     }
 }

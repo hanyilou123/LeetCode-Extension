@@ -12,19 +12,22 @@ public class Solution {
         int[] dp2 = new int[len];
         dp1[0]=nums[0];
         dp1[1] = nums[0];
+        dp2[0]=0;
+        dp2[1]=nums[1];
         for(int i=2; i<len-1; i++)
         {
             dp1[i]=Math.max(nums[i]+dp1[i-2], dp1[i-1]);
-        }
-        max1=dp1[len-2];
-        
-        dp2[0]=0;
-        dp2[1]=nums[1];
-        for(int i=2; i<len; i++)
-        {
             dp2[i]=Math.max(nums[i]+dp2[i-2], dp2[i-1]);
         }
+        max1=dp1[len-2];
+        dp2[len-1]=Math.max(nums[len-1]+dp2[len-3], dp2[len-2]);
         max2=dp2[len-1];
+        
+        // for(int i=2; i<len; i++)
+        // {
+        //     dp2[i]=Math.max(nums[i]+dp2[i-2], dp2[i-1]);
+        // }
+        
         return Math.max(max1, max2);
     }
 }

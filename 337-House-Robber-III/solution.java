@@ -21,10 +21,10 @@ public class Solution {
             return hash.get(root);
         int val;
         if(root.left!=null)
-            val += rob(root.left.left, hash) + rob(root.left.right, hash);
+            val += robSub(root.left.left, hash) + robSub(root.left.right, hash);
         if(root.right!=null)
-            val += rob(root.right.left, hash) + rob(root.right.right, hash);
-        val = Math.max(val+root.val, rob(root.left, hash)+rob(root.right, hash));
+            val += robSub(root.right.left, hash) + robSub(root.right.right, hash);
+        val = Math.max(val+root.val, robSub(root.left, hash)+robSub(root.right, hash));
         hash.put(root, val);
         return val;
     }

@@ -2,7 +2,7 @@ public class Solution {
     public int maxSumSubmatrix(int[][] matrix, int k) {
         if(matrix==null || matrix.length==0)
             return 0;
-        int row=matrix.length, col=maxtrix[0].length;
+        int row=matrix.length, col=matrix[0].length;
         int[][] vsum = new int[row][col];
         for(int i=0; i<row; i++)
         {

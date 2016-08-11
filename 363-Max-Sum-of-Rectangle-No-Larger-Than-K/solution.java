@@ -6,7 +6,7 @@ public class Solution {
         int row=Math.min(matrix.length, matrix[0].length);
         int col=Math.max(matrix.length, matrix[0].length);
         int[][] vsum = new int[row][col];
-        boolean colIsBig = col>row;
+        boolean colIsBig = matrix.length > matrix[0].length;
         for(int i=0; i<row; i++)
         {
             for(int j=0; j<col; j++)

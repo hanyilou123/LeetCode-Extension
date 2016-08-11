@@ -6,11 +6,12 @@ public class Solution {
         int row=Math.min(matrix.length, matrix[0].length);
         int col=Math.max(matrix.length, matrix[0].length);
         int[][] vsum = new int[row][col];
+        boolean colIsBig = col>row;
         for(int i=0; i<row; i++)
         {
             for(int j=0; j<col; j++)
             {
-                vsum[i][j] = matrix[i][j];
+                vsum[i][j] = colIsBig?matrix[i][j]:matrix[j][i];
                 if(i>0)
                 {
                     vsum[i][j] += vsum[i-1][j];

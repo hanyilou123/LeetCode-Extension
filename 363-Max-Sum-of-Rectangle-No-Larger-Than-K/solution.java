@@ -24,15 +24,17 @@ public class Solution {
                 int sum=0;
                 for(int m=0; m<col; m++)
                 {
-                    sum+=matrix[j][m];
+                    sum+=vsum[j][m];
                     if(i>0)
-                        sum-=matrix[i-1][m];
+                        sum-=vsum[i-1][m];
                     if(sum==k)
                         return sum;
                     if(sum<k)
                         maxVal = Math.max(maxVal, sum);
-                    Integer other = ts.ceiling(sum-maxVal);
+                    Integer other = ts.ceiling(sum-k);
                     ts.add(sum);
+                    if(other==null)
+                        continue;
                     maxVal = Math.max(maxVal, sum-other);
                 }
                 

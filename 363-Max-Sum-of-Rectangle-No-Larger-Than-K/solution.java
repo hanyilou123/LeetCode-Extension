@@ -11,7 +11,7 @@ public class Solution {
         {
             for(int j=0; j<col; j++)
             {
-                vsum[i][j] = (colIsBig?matrix[i][j]:matrix[j][i]);
+                vsum[i][j] = (colIsBig?matrix[j][i]:matrix[i][j]);
                 if(i>0)
                 {
                     vsum[i][j] += vsum[i-1][j];

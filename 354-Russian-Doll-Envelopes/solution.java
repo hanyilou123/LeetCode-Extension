@@ -15,7 +15,7 @@ public class Solution {
         int len=0;
         for(int i=0; i<envelopes.length; i++)
         {
-            int index = Arrays.binarySearch(dp, 0, len, envelopes[i]);
+            int index = Arrays.binarySearch(dp, 0, len, envelopes[1]);
             if(index<0)
                 index = -(index+1);
             dp[index] = envelopes[i];

@@ -19,7 +19,7 @@ public class Solution {
             return 0;
         if(hash.containsKey(root))
             return hash.get(root);
-        int val;
+        int val=0;
         if(root.left!=null)
             val += robSub(root.left.left, hash) + robSub(root.left.right, hash);
         if(root.right!=null)

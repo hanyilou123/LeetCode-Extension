@@ -9,23 +9,19 @@
  */
 public class Solution {
     public int rob(TreeNode root) {
-        
-        Map<TreeNode, Integer> hash = new HashMap<TreeNode, Integer>();
-        return robSub(root, hash);
+        int[] res = robSub(root);
+        return Math.max(res[0], res[1]);  //res[0]: root is not robbed, res[1]:root is robbed
     }
-    public int robSub(TreeNode root, Map<TreeNode, Integer> hash)
+    public int[] robSub(TreeNode root)
     {
         if(root==null)
-            return 0;
-        if(hash.containsKey(root))
-            return hash.get(root);
-        int val=0;
-        if(root.left!=null)
-            val += robSub(root.left.left, hash) + robSub(root.left.right, hash);
-        if(root.right!=null)
-            val += robSub(root.right.left, hash) + robSub(root.right.right, hash);
-        val = Math.max(val+root.val, robSub(root.left, hash)+robSub(root.right, hash));
-        hash.put(root, val);
-        return val;
+            return new int[2];
+        int[] left = robSub(root.left);
+        int[] right = robSub(root.right);
+        
+        int[] res = new int[2];
+        res[0] = Math.max(left[0], left[1])+Math.max(right[0],right[1]);
+        res[1] = root.val + left[0] + right[0];
+        return res;
     }
 }

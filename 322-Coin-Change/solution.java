@@ -6,7 +6,7 @@ public class Solution {
         int[] dp = new int[amount+1];
         for(int i=1; i<=amount; i++)
         {
-            int minval = Integer.MAX_VALUE-1;
+            int minval = Integer.MAX_VALUE-1; //如果minval=Integer.MAX_VALUE, dp[i-coins[j]]+1 可能就溢出了
             for(int j=0; j<coins.length; j++)
             {
                 if(i-coins[j]<0)

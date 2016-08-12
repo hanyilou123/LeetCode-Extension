@@ -1,24 +1,22 @@
 public class Solution {
-    public class compareD implements Comparator<Integer>{
-        public int compare(Integer a, Integer b){
-            return b-a;
-        }
-    }
     public int coinChange(int[] coins, int amount) {
         if(coins==null || coins.length==0)
             return 0;
-        Arrays.sort(coins, new compareD());
+        Arrays.sort(coins);
         int[] dp = new int[amount+1];
-        for(int i=0; i<=amount; i++)
+        for(int i=1; i<=amount; i++)
         {
-            for(int j=coins.length-1; j>=0; j--)
+            int minval = Integer.MAX_VALUE-1;
+            for(int j=0; j<coins.length; j++)
             {
-                if(i-coins[j]>0)
-                    dp[i] += dp[i-coins[j]];
-                else if(i-coins[j]==0)
-                    dp[i] += 1;
+                if(i-coins[j]<0)
+                    break;
+                minval = Math.min(minval, dp[i-coins[j]]+1);
             }
+            dp[i] = minval;
         }
+        if(dp[amount]==Integer.MAX_VALUE-1)
+            return -1;
         return dp[amount];
     }
 }

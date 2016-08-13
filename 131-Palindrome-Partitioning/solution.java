@@ -11,7 +11,8 @@ public class Solution {
     {
         if(s.length()==0)
         {
-            result.add(row);
+            result.add(new ArrayList<String>(row));
+            return;
         }
         for(int i=1; i<=s.length(); i++)
         {
@@ -20,7 +21,7 @@ public class Solution {
             {
                 row.add(prefix);
                 String subfix = s.substring(i);
-                partProcess(result, row, s);
+                partProcess(result, row, subfix);
                 row.remove(row.size()-1);
             }
         }

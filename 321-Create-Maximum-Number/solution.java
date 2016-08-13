@@ -33,7 +33,7 @@ public class Solution {
         int i=0, j=0;
         for(int l=0; l<k; l++)
         {
-            result[l] = isGreater(nums1, i, nums2, j,)?nums1[i++]:nums2[j++];
+            result[l] = isGreater(nums1, i, nums2, j)?nums1[i++]:nums2[j++];
         }
         return result;
     }

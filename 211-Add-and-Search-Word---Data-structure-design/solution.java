@@ -1,5 +1,5 @@
 public class WordDictionary {
-    Map<Integer, List<String>> dic = new HashMap<Integer, ArrayList<String>>();
+    Map<Integer, List<String>> dic = new HashMap<Integer, List<String>>();
     
     // Adds a word into the data structure.
     public void addWord(String word) {

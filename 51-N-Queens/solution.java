@@ -15,15 +15,15 @@ public class Solution {
             List<String> solution = new ArrayList<String>();
             for(int i=0; i<n; i++)
             {
-                StringBuilder row = new StringBuilder();
+                StringBuilder temp = new StringBuilder();
                 for(int j=0; j<n; j++)
                 {
                     if(j==state[i])
-                        row.append(".");
+                        temp.append("Q");
                     else 
-                        row.append("Q");
+                        temp.append(".");
                 }
-                solution.add(row.toString());
+                solution.add(temp.toString());
             }
             result.add(solution);
             return;

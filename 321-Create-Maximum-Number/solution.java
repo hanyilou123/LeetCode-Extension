@@ -12,14 +12,14 @@ public class Solution {
         }
         else
         {
-            int maxM = m>k?k:m;
-            int minM = n>k?0:k-n;
+            int maxM = m>=k?k:m;
+            int minM = n>=k?0:k-n;
             int[] result = new int[k];
             for(int i=0; i<k; i++)
                 result[i]=Integer.MIN_VALUE;
-            for(int i=minM; i<maxM; i++)
+            for(int i=minM; i<=maxM; i++)
             {
-                int[] temp = merge(getMaxK(nums1, i), getMaxK(nums2, k-i));
+                int[] temp = merge(getMaxK(nums1, i), getMaxK(nums2, k-i), k);
                 result = isGreater(result, 0, temp, 0)?result:temp;
             }
             return result;

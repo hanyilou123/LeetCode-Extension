@@ -66,6 +66,6 @@ public class Solution {
         // int j=0;
         // for(int i=temp.length-1; i>=temp.length-k; i--)
         //     result[j++] = temp[i];
-        // return result;
+        return result;
     }
 }

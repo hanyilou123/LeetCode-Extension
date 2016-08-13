@@ -46,6 +46,7 @@ public class WordDictionary {
             {
                 return false;
             }
+            i++;
         }
         return true;
     }

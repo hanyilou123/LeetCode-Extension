@@ -1,7 +1,7 @@
 public class Solution {
     public List<String> wordBreak(String s, Set<String> wordDict) {
         Map<String, List<String>> map = new HashMap<String, List<String>>();
-        return breakProcess();
+        return breakProcess(s, wordDict, map);
     }
     public List<String> breakProcess(String s, Set<String> wordDict, Map<String, List<String>> map)
     {

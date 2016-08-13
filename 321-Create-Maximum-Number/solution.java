@@ -56,7 +56,7 @@ public class Solution {
         int i=0;
         for(int j=0; j<nums.length; j++)
         {
-            while(nums.length-j>k-i && i>0 && result[i-1]<nums[j])
+            while(nums.length-j>k-i && i>0 && result[i-1]<nums[j]) //并不是一味的排序，还要保持先后顺序，即使后两个值很小
                 i--;
             if(i<k)
                 result[i++]=nums[j];

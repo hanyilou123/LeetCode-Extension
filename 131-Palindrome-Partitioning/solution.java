@@ -12,7 +12,6 @@ public class Solution {
         if(s.length()==0)
         {
             result.add(row);
-            return;
         }
         for(int i=1; i<=s.length(); i++)
         {

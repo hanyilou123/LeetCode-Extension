@@ -4,7 +4,7 @@ public class Solution {
         int[] state = new int[n];
         for(int i=0; i<n; i++)
             state[i]=-1;
-        solveProcess(result, state, row);
+        solveProcess(result, state, 0);
         return result;
     }
     public void solveProcess(List<List<String>> result, int[] state, int row)

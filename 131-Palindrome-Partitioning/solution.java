@@ -9,7 +9,7 @@ public class Solution {
     }
     public void partProcess(List<List<String>> result, List<String> row, String s)
     {
-        if(s.length==0)
+        if(s.length()==0)
         {
             result.add(row);
             return;

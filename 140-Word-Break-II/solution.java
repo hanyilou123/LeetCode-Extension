@@ -16,16 +16,23 @@ public class Solution {
             String prefix = s.substring(0, i);
             if(wordDict.contains(prefix))
             {
-                String subfix = s.substring(i);
-                List<String> temp = breakProcess(subfix, wordDict, map);
-                for(String str:temp)
+                if(i==n)
                 {
-                    str = prefix + " " + str;
-                    result.add(str);
+                    result.add(prefix);
+                }
+                else
+                {
+                    String subfix = s.substring(i);
+                    List<String> temp = breakProcess(subfix, wordDict, map);
+                    for(String str:temp)
+                    {
+                        str = prefix + " " + str;
+                        result.add(str);
+                    }
                 }
             }
         }
-        map.add(s, result);
+        map.put(s, result);
         return result;
     }
 }

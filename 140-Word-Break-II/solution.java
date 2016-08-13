@@ -5,7 +5,7 @@ public class Solution {
     }
     public List<String> breakProcess(String s, Set<String> wordDict, Map<String, List<String>> map)
     {
-        if(map.contains(s))
+        if(map.containsKey(s))
             return map.get(s);
         List<String> result = new ArrayList<String>();
         int n = s.length();

@@ -2,20 +2,20 @@ public class Solution {
     public boolean isValidSerialization(String preorder) {
         if(preorder==null || preorder.length()==0)
             return false;
-        char[] splitA = preorder.split(",");
-        Stack<Character> stack = new Stack<Character>();
+        String[] splitA = preorder.split(",");
+        Stack<String> stack = new Stack<String>();
         for(int i=0; i<splitA.length; i++)
         {
-            char c = splitA[i];
-            while(c=='#' && !stack.isEmpty() && c==stack.peek())
+            String str = splitA[i];
+            while(str.equals("#") && !stack.isEmpty() && str.equals(stack.peek()))
             {
                 stack.pop();
                 if(stack.isEmpty())
                     return false;
                 stack.pop();
             }
-            stack.push(c);
+            stack.push(str);
         }
-        return stack.size()==1 && stack.peek()=='#';
+        return stack.size()==1 && stack.peek().equals("#");
     }
 }

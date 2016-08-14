@@ -11,6 +11,6 @@ public class Solution {
             if(--count[s.charAt(i)-'a']==0)
                 break;
         }
-        return s.length()==0?0: s.charAt(pos)+removeDuplicateLetters(s.substring(pos+1).replaceAll(s.charAt(pos)+"", ""));
+        return s.length()==0?"": s.charAt(pos)+removeDuplicateLetters(s.substring(pos+1).replaceAll(s.charAt(pos)+"", ""));
     }
 }

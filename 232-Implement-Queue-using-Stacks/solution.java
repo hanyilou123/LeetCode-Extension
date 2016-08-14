@@ -19,7 +19,7 @@ class MyQueue {
             while(!input.isEmpty())
                 output.push(input.pop());
         }
-        output.peek();
+        return output.peek();
     }
 
     // Return whether the queue is empty.

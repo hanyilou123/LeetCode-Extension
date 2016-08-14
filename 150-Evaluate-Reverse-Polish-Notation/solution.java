@@ -17,7 +17,8 @@ public class Solution {
             }
             else if(tokens[i].equals("/"))
             {
-                stack.push(1/stack.pop()*stack.pop());
+                int n1=stack.pop(), n2=stack.pop();
+                stack.push(n2/n1);
             }
             else
             {

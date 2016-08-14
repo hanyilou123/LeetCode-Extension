@@ -11,9 +11,9 @@ public class Solution {
             return result;
         int l1=nums1.length, l2=nums2.length;
         PriorityQueue<int[]> heap = new PriorityQueue<int[]>(new pairComp());
-        for(int i=0; i<l1; i++)
+        for(int i=0; i<l1 && i<k; i++)
         {
-            for(int j=0; j<l2; j++)
+            for(int j=0; j<l2 && j<k; j++)
             {
                 heap.offer(new int[]{nums1[i], nums2[j]});
             }

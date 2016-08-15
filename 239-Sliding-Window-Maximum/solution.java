@@ -16,9 +16,10 @@ public class Solution {
             {
                 dq.pollLast();
             }
+            dq.offer(i);
             if(i>=k-1)
             {
-                res[idx++]=dq.peekFirst();
+                res[idx++]=nums[dq.peekFirst()];
             }
         }
         return res;

@@ -1,5 +1,5 @@
 public class MedianFinder { 
-    public class reverseOrder implements<Integer>{
+    public class reverseOrder implements Comparator<Integer>{
         public int compare(Integer a, Integer b)
         {
             return b-a;
@@ -17,7 +17,7 @@ public class MedianFinder {
 
     // Returns the median of current data stream
     public double findMedian() {
-        return maxHeap.size()>minHeap.size()?maxHeap.peek():(maxHeap.peek()+minHeap.peek())/2;
+        return maxHeap.size()>minHeap.size()?maxHeap.peek():(maxHeap.peek()+minHeap.peek())/2.0;
     }
 };
 

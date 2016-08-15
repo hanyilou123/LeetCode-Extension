@@ -5,7 +5,7 @@ public class Solution {
         Deque<Integer> dq = new ArrayDeque<Integer>();
         int len = nums.length;
         int[] res = new int[len-k+1];
-        int i=0;
+        int idx=0;
         for(int i=0; i<nums.length; i++)
         {
             while(!dq.isEmpty() && dq.peek()<i-k+1)
@@ -18,7 +18,7 @@ public class Solution {
             }
             if(i>=k-1)
             {
-                res[i++]=dq.peekFirst();
+                res[idx++]=dq.peekFirst();
             }
         }
         return res;

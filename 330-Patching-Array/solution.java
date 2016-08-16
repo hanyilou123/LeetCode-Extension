@@ -6,7 +6,7 @@ public class Solution {
             if(i<nums.length && known>=nums[i])
                 known+=nums[i++];
             else{
-                known +=known;
+                known <<1;
                 count++;
             }
         }

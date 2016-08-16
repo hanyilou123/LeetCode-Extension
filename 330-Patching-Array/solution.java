@@ -3,7 +3,7 @@ public class Solution {
         if(nums==null || nums.length==0)
             return 0;
         int known=1, count=0, i=0;
-        while(know<n)
+        while(known<n)
         {
             if(know>=nums[i])
                 know+=nums[i];

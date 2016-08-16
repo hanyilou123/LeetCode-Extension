@@ -1,14 +1,12 @@
 public class Solution {
     public int minPatches(int[] nums, int n) {
-        if(nums==null || nums.length==0)
-            return 0;
         int known=1, count=0, i=0;
-        while(known<n)
+        while(known<=n)
         {
-            if(know>=nums[i])
-                know+=nums[i];
+            if(i<nums.length && known>=nums[i])
+                known+=nums[i++];
             else{
-                know +=know;
+                known +=known;
                 count++;
             }
         }

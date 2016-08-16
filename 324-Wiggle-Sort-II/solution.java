@@ -3,7 +3,7 @@ public class Solution {
         if(nums==null || nums.length==0)
             return;
         Arrays.sort(nums);
-        int small=(nums.length-1)/2, big=nums.length;
+        int small=(nums.length-1)/2, big=nums.length-1;
         int[] temp = new int[nums.length];
         for(int i=0; i<nums.length; i++)
         {

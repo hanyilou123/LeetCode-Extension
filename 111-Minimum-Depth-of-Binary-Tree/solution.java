@@ -8,23 +8,12 @@
  * }
  */
 public class Solution {
-    int minDep = Integer.MAX_VALUE;
     public int minDepth(TreeNode root) {
-        process(root, 0);
-        return minDep;
-    }
-    public void process(TreeNode root, int depth)
-    {
         if(root==null)
-        {
-            minDep = Math.min(depth, minDep);
-            return;
-        }
-        if(root.left==null && root.right==null)
-            return 1;
-        if(root.left!=null)
-            process(root.left, depth+1);
-        if(root.right!=null)
-            process(root.right, depth+1);
+            return 0;
+        if(root.left!=null && root.right!=null)
+            return Math.min(minDepth(root.left), minDepth(root.right))+1;
+        else
+            return Math.max(minDepth(root.left), minDepth(root.right))+1;
     }
 }

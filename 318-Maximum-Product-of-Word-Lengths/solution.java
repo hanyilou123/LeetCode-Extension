@@ -25,7 +25,7 @@ public class Solution {
                 break;
             for(int j=i+1; j<len; j++)
             {
-                if((words[i]&words[j])==0)
+                if((bitmap[i]&bitmap[j])==0)
                 {
                     max = Math.max(max, words[i].length()*words[j].length());
                 }

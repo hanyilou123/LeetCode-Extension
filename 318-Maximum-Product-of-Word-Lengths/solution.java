@@ -10,7 +10,7 @@ public class Solution {
             return 0;
         int len = words.length;
         int[] bitmap = new int[len];
-        // Arrays.sort(words, new compLen());
+        // Arrays.sort(words, new compLen());  //不排序速度会快很多
         for(int i=0; i<len; i++)
         {
             for(char c: words[i].toCharArray())

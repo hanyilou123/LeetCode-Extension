@@ -4,7 +4,7 @@ public class Solution {
         {
             int carry = a & b;
             a = a ^ b;
-            carry<<1;
+            carry <<= 1;
         }
         return a;
     }

@@ -33,7 +33,7 @@ public class Codec {
     }
     public TreeNode buildTree(List<String> nodes)
     {
-        String node = nodes.remove();
+        String node = nodes.remove(0);
         if(node.equals("#"))
             return null;
         else{

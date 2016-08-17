@@ -11,6 +11,7 @@ public class Solution {
     int minDep = Integer.MAX_VALUE;
     public int minDepth(TreeNode root) {
         process(root, 0);
+        return minDep;
     }
     public void process(TreeNode root, int depth)
     {
@@ -19,7 +20,11 @@ public class Solution {
             minDep = Math.min(depth, minDep);
             return;
         }
-        process(root.left, depth+1);
-        process(root.right, depth+1);
+        if(root.left==null && root.right==null)
+            return 1;
+        if(root.left!=null)
+            process(root.left, depth+1);
+        if(root.right!=null)
+            process(root.right, depth+1);
     }
 }

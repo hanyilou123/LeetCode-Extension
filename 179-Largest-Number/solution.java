@@ -16,7 +16,7 @@ public class Solution {
             toStr[i] = String.valueOf(nums[i]);
         }
         Arrays.sort(toStr, new compStrRev());
-        if(toStr[0].charAt(0)=="0")
+        if(toStr[0].charAt(0)=='0')
             return "0";
         
         StringBuilder sb = new StringBuilder();

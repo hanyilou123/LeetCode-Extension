@@ -19,7 +19,7 @@ public class Solution {
     {
         if(root==null)
             return;
-        if(height==root.size())
+        if(height==res.size())
         {
             res.add(root.val);
         }

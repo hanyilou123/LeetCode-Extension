@@ -13,7 +13,7 @@ public class Solution {
             return null;
         if(gMap.containsKey(node))
             return gMap.get(node);
-        UndirectedGraphNode newNode = new UndirectedGraphNode(node.val);
+        UndirectedGraphNode newNode = new UndirectedGraphNode(node.label);
         for(UndirectedGraphNode neig : node.neighbors)
         {
             newNode.neighbors.add(cloneGraph(neig));

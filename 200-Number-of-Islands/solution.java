@@ -24,7 +24,7 @@ public class Solution {
         for(int k=0; k<dx.length; k++)
         {
             if(i+dx[k]>=0 && i+dx[k]<grid.length && j+dy[k]>=0 && j+dy[k]<grid[0].length && grid[i+dx[k]][j+dy[k]])
-                exploreProcess(grid, [i+dx[k]], [j+dy[k]);
+                exploreProcess(grid, i+dx[k], j+dy[k]);
         }
     }
 }

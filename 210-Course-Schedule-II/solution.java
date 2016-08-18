@@ -20,16 +20,16 @@ public class Solution {
             for(int i=0; i<prerequisites.length; i++)
             {
                 int l = prerequisites[i][1];
-                if(matrix[i][0]==cur)
+                if(prerequisites[i][0]==cur)
                 {
                     if(--outdegree[l]==0)
                     {
-                        que.offer(i);
+                        que.offer(l);
                     }
                 }
             }
         }
-        if(count!=-1)
+        if(count==-1)
             return result;
         else
             return new int[0];

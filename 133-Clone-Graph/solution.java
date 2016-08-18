@@ -14,6 +14,7 @@ public class Solution {
         if(gMap.containsKey(node))
             return gMap.get(node);
         UndirectedGraphNode newNode = new UndirectedGraphNode(node.label);
+        gMap.put(node, newNode);
         for(UndirectedGraphNode neig : node.neighbors)
         {
             newNode.neighbors.add(cloneGraph(neig));

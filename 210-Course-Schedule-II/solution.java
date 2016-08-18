@@ -1,6 +1,6 @@
 public class Solution {
     public int[] findOrder(int numCourses, int[][] prerequisites) {
-        int[] outdegree = new int[numCourses];
+        int[] outdegree = new int[numCourses];    //不一定必须要把matrix建立起来，空间超出
         int[] result = new int[numCourses];
         for(int i=0; i<prerequisites.length; i++)
         {

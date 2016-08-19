@@ -5,7 +5,7 @@ public class Solution {
     public int longestIncreasingPath(int[][] matrix) {
         if(matrix==null || matrix.length==0 || matrix[0].length==0)
             return 0;
-        int[][] cache = new int[matrix.length][matrix.length];
+        int[][] cache = new int[matrix.length][matrix[0].length];
         int maxValue = 1;
         for(int i=0; i<matrix.length; i++)
         {

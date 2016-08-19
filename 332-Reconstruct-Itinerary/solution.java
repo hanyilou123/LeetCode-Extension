@@ -1,6 +1,6 @@
 public class Solution {
     public List<String> findItinerary(String[][] tickets) {
-        Map<String, PirorityQueue<String>> ticketMap = new HashMap<String, PriorityQueue<String>>();
+        Map<String, PriorityQueue<String>> ticketMap = new HashMap<String, PriorityQueue<String>>();
         List<String> res = new LinkedList<String>();
         String from = "JFK";
         int len = tickets.length;
@@ -16,7 +16,7 @@ public class Solution {
         Collections.reverse();
         return res;
     }
-    public void dfs(String from, Map<String, PirorityQueue<String>> ticketMap, List<String> res)
+    public void dfs(String from, Map<String, PriorityQueue<String>> ticketMap, List<String> res)
     {
         while(ticketMap.containsKey(from) && !ticketMap.get(from).isEmpty())
         {

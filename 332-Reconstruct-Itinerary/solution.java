@@ -20,7 +20,7 @@ public class Solution {
     {
         while(ticketMap.containsKey(from) && !ticketMap.get(from).isEmpty())
         {
-            dfs(ticketMap.get(from).poll(), ticketMap, res)
+            dfs(ticketMap.get(from).poll(), ticketMap, res);
         }
         res.add(from);
     }

@@ -1,6 +1,6 @@
 public class Solution {
     public List<Integer> findMinHeightTrees(int n, int[][] edges) {
-        List<Integer> res = ArrayList<Integer>();
+        List<Integer> res = new ArrayList<Integer>();
         if(n==1)
         {
             res.add(0);

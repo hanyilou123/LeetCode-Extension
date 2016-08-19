@@ -13,7 +13,7 @@ public class Solution {
             ticketMap.get(tickets[i][0]).add(tickets[i][1]);
         }
         dfs(from, ticketMap, res);
-        Collections.reverse(res);
+        //Collections.reverse(res);
         return res;
     }
     public void dfs(String from, Map<String, PriorityQueue<String>> ticketMap, List<String> res)
@@ -22,6 +22,6 @@ public class Solution {
         {
             dfs(ticketMap.get(from).poll(), ticketMap, res);
         }
-        res.add(from);
+        res.add(0, from);
     }
 }

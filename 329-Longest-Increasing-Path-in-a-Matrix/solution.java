@@ -18,8 +18,7 @@ public class Solution {
     {
         for(int k=0; k<dx.length; k++)
         {
-            if(i+dx[k]>=0 && i+dx[k]<matrix.length && j+dy[k]>=0 && j+dy[k]<matrix[i].length 
-            && matrix[i+dx[k]][j+dy[k]]>matrix[i][j])
+            if(i+dx[k]>=0 && i+dx[k]<matrix.length && j+dy[k]>=0 && j+dy[k]<matrix[i].length && matrix[i+dx[k]][j+dy[k]]>matrix[i][j])
             {
                 maxValue=Math.max(maxValue, count+1);
                 dfs(matrix, i+dx[k], j+dy[k], count+1);

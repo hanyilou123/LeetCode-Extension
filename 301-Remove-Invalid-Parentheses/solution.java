@@ -8,13 +8,17 @@ public class Solution {
         que.offer(s);
         visited.add(s);
         boolean found = false;
+        int validLen = s.length();
         while(!que.isEmpty())
         {
             String cur = que.poll();
+            if(found && cur.length()!=validLen)
+                continue;
             if(isValid(cur))
             {
                 res.add(cur);
                 found = true;
+                validLen = cur.length();
             }
             if(found)
                 continue;

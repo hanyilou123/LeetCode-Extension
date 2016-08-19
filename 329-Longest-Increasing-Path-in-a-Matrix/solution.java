@@ -1,13 +1,13 @@
 public class Solution {
     int[] dx = {-1, 0, 1, 0};
     int[] dy = {0, 1, 0, -1};
-    int maxValue = Integer.MIN_VALUE;
+    int maxValue = 1;
     public int longestIncreasingPath(int[][] matrix) {
         if(matrix==null || matrix.length==0 || matrix[0].length==0)
             return 0;
         for(int i=0; i<matrix.length; i++)
         {
-            for(int j=0; j<matrix.length; j++)
+            for(int j=0; j<matrix[i].length; j++)
             {
                 dfs(matrix, i, j, 1);
             }

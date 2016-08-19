@@ -26,7 +26,7 @@ public class Solution {
         {
             if(i+dx[k]>=0 && i+dx[k]<matrix.length && j+dy[k]>=0 && j+dy[k]<matrix[i].length && matrix[i+dx[k]][j+dy[k]]>matrix[i][j])
             {
-                int len = 1+dfs(matrix, i+dx[k], j+dy[k], count+1);
+                int len = 1+dfs(matrix, i+dx[k], j+dy[k], count+1, cache);
                 max=Math.max(max, len);
             }
         }

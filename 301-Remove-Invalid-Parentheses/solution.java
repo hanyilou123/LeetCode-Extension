@@ -39,7 +39,9 @@ public class Solution {
         {
             if(str.charAt(i)=='(')
                 count++;
-            if(str.charAt(i)==')' && count--==0)
+            if(str.charAt(i)==')')
+                count--;
+            if(count==-1)
                 return false;
         }
         return count==0;

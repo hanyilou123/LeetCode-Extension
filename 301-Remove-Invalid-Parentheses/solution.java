@@ -1,7 +1,7 @@
 public class Solution {
     public List<String> removeInvalidParentheses(String s) {
         List<String> res = new ArrayList<String>();
-        if(s==null || s.length==0)
+        if(s==null)
             return res;
         Queue<String> que = new LinkedList<String>();
         Set<String> visited = new HashSet<String>();
@@ -39,9 +39,7 @@ public class Solution {
         {
             if(str.charAt(i)=='(')
                 count++;
-            if(str.charAt(i)==')')
-                count--;
-            if(count==0)
+            if(str.charAt(i)==')' && count--==0)
                 return false;
         }
         return count==0;

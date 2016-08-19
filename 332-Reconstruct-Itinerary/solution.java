@@ -1,7 +1,7 @@
 public class Solution {
     public List<String> findItinerary(String[][] tickets) {
         Map<String, PriorityQueue<String>> ticketMap = new HashMap<String, PriorityQueue<String>>();
-        List<String> res = new LinkedList<String>();
+        List<String> res = new ArrayList<String>();
         String from = "JFK";
         int len = tickets.length;
         for(int i=0; i<len; i++)

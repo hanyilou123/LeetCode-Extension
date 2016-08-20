@@ -21,7 +21,7 @@ class PeekingIterator implements Iterator<Integer> {
 	@Override
 	public Integer next() {
 	    Integer res = next;
-	    next = iter.hasNext()?iter.next:null;
+	    next = iter.hasNext()?iter.next():null;
 	    return res;
 	}
 

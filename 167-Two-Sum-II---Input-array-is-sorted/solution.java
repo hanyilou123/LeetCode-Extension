@@ -1,6 +1,6 @@
 public class Solution {
     public int[] twoSum(int[] numbers, int target) {
-        if(numbers==null || numbers.length==0)
+        if(numbers==null || numbers.length<2)
             return new int[2];
         int idx1=0, idx2=numbers.length-1;
         int[] res = new int[2];

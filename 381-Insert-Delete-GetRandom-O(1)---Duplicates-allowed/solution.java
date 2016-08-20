@@ -15,7 +15,7 @@ public class RandomizedCollection {
         if(!locs.containsKey(val))
         {
             flag = true;
-            locs.put(val, new HashSet<Integer>);
+            locs.put(val, new HashSet<Integer>());
         }
         locs.get(val).add(nums.size());
         nums.add(val);

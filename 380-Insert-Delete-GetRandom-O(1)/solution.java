@@ -21,15 +21,15 @@ public class RandomizedSet {
     public boolean remove(int val) {
         if(locaHash.containsKey(val))
             return false;
-        int loc = localHash.get(val);
+        int loc = locaHash.get(val);
         if(loc!=nums.size()-1)
         {
             int lastOne = nums.get(nums.size()-1);
             nums.set(loc, lastOne);
-            localHash.set(lastOne, loc);
+            locaHash.set(lastOne, loc);
         }
         nums.remove(nums.size()-1);
-        localHash.remove(val);
+        locaHash.remove(val);
         return true;
     }
     

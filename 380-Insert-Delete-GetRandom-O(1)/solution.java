@@ -26,7 +26,7 @@ public class RandomizedSet {
         {
             int lastOne = nums.get(nums.size()-1);
             nums.set(loc, lastOne);
-            locaHash.set(lastOne, loc);
+            locaHash.put(lastOne, loc);
         }
         nums.remove(nums.size()-1);
         locaHash.remove(val);

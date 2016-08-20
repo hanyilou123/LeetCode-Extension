@@ -29,9 +29,10 @@ public class SummaryRanges {
         {
             tm.get(l).end = Math.max(tm.get(l).end, val);
         }
-        else if(h!=null && h=val+1)
+        else if(h!=null && h==val+1)
         {
             tm.put(val, new Interval(val, tm.get(h).end));
+            tm.remove(h);
         }
         else
         {

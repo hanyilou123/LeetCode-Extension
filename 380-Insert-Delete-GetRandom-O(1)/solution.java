@@ -19,7 +19,7 @@ public class RandomizedSet {
     
     /** Removes a value from the set. Returns true if the set contained the specified element. */
     public boolean remove(int val) {
-        if(locaHash.containsKey(val))
+        if(!locaHash.containsKey(val))
             return false;
         int loc = locaHash.get(val);
         if(loc!=nums.size()-1)

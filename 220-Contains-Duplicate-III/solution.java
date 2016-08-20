@@ -7,7 +7,7 @@ public class Solution {
         {
             long reMapNum = (long)nums[i]-Integer.MIN_VALUE;
             long bucket = reMapNum/((long)t+1);
-            if(bucketMap.containsKey(bucket) || (bucketMap.containsKey(bucket-1) && reMapNum-bucketMap.get(bucket-1)<=t) || (bucketMap.containsKey(bucket+1) && bucketMap.get(bucket-1)-reMapNum<=t))
+            if(bucketMap.containsKey(bucket) || (bucketMap.containsKey(bucket-1) && reMapNum-bucketMap.get(bucket-1)<=t) || (bucketMap.containsKey(bucket+1) && bucketMap.get(bucket+1)-reMapNum<=t))
                 return true;
             if(bucketMap.entrySet().size()>=k)
             {

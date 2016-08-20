@@ -9,7 +9,7 @@ public class Solution {
             long bucket = reMapNum/((long)t+1);
             if(bucketMap.containsKey(bucket) || (bucketMap.containsKey(bucket-1) && reMapNum-bucketMap.get(bucket-1)<=t) || (bucketMap.containsKey(bucket+1) && bucketMap.get(bucket-1)-reMapNum<=t))
                 return true;
-            if(bucketMap.size()>=k)
+            if(bucketMap.entrySet().size()>=k)
             {
                 long lastOne = ((long)nums[i-k]-Integer.MIN_VALUE)/((long)t+1);
                 bucketMap.remove(lastOne);

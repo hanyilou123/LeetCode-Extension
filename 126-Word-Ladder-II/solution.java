@@ -37,7 +37,7 @@ public class Solution {
                     if(dict.contains(newCur))
                     {
                         map.get(newCur).add(cur);
-                        if(pathDist.get(newCur)==null)    //!pathDist.containsKey(newCur);
+                        if(!pathDist.containsKey(newCur))    //!pathDist.containsKey(newCur);
                         {
                             int depth = pathDist.get(cur);
                             pathDist.put(newCur, depth+1);

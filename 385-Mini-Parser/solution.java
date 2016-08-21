@@ -40,21 +40,21 @@ public class Solution {
             if(c=='[')
             {
                 NestedInteger newOne = new NestedInteger();
-                stack.peek().add(newOne);
-                stack.push(newOne);
+                stk.peek().add(newOne);
+                stk.push(newOne);
                 start = i+1;
             }
             else if(c==']' || c==',')
             {
-                if(i<start)
+                if(i>start)
                 {
                     int intElem = Integer.parseInt(s.substring(start, i));
-                    stack.peek().add(new NestedInteger(intElem));
+                    stk.peek().add(new NestedInteger(intElem));
                 }
                 start = i+1;
                 if(c==']')
                 {
-                    stack.pop();
+                    stk.pop();
                 }
             }
         }

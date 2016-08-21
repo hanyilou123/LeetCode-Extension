@@ -65,6 +65,6 @@ public class Solution {
                     dfs(next, end, dict, path, result, map);
             }
         }
+        path.remove(path.size()-1);
     }
-    path.remove(path.size()-1);
 }

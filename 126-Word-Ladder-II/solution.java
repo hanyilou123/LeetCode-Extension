@@ -21,7 +21,7 @@ public class Solution {
             for(int i=0; i<cur.length(); i++)
             {
                 char[] curArray = cur.toCharArray();
-                for(char ch=='a'; ch<='z'; ch++)
+                for(char ch='a'; ch<='z'; ch++)
                 {
                     if(curArray[i]==ch)
                         continue;

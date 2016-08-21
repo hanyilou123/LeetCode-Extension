@@ -18,7 +18,7 @@ public class Solution {
         pathDist.put(start, 0);
         for(String s: dict)
         {
-            map.put(s, new ArrayList<String>())
+            map.put(s, new ArrayList<String>());
         }
         while(!que.isEmpty())
         {

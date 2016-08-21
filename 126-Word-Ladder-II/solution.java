@@ -33,7 +33,7 @@ public class Solution {
                         {
                             int depth = pathDist.get(cur);
                             pathDist.put(newCur, depth+1);
-                            queue.add(newCur);
+                            que.add(newCur);
                         }
                     }
                 }

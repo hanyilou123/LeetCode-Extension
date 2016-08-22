@@ -13,7 +13,7 @@ public class Solution {
     /** @param head The linked list's head.
         Note that the head is guaranteed to be not null, so it contains at least one node. */
     public Solution(ListNode head) {
-        head = head;
+        this.head = head;
         rd = new Random();
     }
     

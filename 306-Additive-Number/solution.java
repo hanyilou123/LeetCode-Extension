@@ -11,10 +11,13 @@ public class Solution {
                     return true;
             }
         }
+        return false;
     }
     public boolean isValid(int i, int j, String num)
     {
-        if(num.charAt(0)=='0' || num.charAt(i)=='0')
+        if(num.charAt(i)=='0' && j>1)
+            return false;
+        if(num.charAt(0)=='0' && i>1)
             return false;
         Long x1 = Long.parseLong(num.substring(0, i));
         Long x2 = Long.parseLong(num.substring(i, i+j));

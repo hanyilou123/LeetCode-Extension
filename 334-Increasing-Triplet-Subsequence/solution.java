@@ -3,7 +3,7 @@ public class Solution {
         if(nums==null || nums.length<3)
             return false;
         int small = Integer.MAX_VALUE;
-        int mid = Integer.Max_VALUE;
+        int mid = Integer.MAX_VALUE;
         for(int i=0; i<nums.length; i++)
         {
             if(nums[i]<=small)

@@ -3,7 +3,7 @@ public class Solution {
     Random rd;
     
     public Solution(int[] nums) {
-        nums = nums;
+        this.nums = nums;
         rd = new Random();
     }
     
@@ -16,7 +16,7 @@ public class Solution {
     public int[] shuffle() {
         if(nums==null)
             return null;
-        int[] sf = new int[];
+        int[] sf = new int[nums.length];
         for(int i=0; i<nums.length; i++)
             sf[i] = nums[i];
         for(int i=1; i<sf.length; i++)

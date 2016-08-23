@@ -1,5 +1,5 @@
 public class Solution {
-    List<String> result = new ArrayList<String>();
+    Set<String> result = new HashSet<String>();
     int[] dx = {-1, 0, 1, 0};
     int[] dy = {0, 1, 0, -1};
     public List<String> findWords(char[][] board, String[] words) {
@@ -10,7 +10,7 @@ public class Solution {
         }
         int m = board.length;
         int n = board[0].length;
-        boolea[][] visited = new boolean[m][n];
+        boolean[][] visited = new boolean[m][n];
         for(int i=0; i<m; i++)
         {
             for(int j=0; j<n; j++)
@@ -18,7 +18,7 @@ public class Solution {
                 dfs(i, j, "", board, trie, visited);
             }
         }
-        return result;
+        return new ArrayList<String>(result);
     }
     public void dfs(int i, int j, String str, char[][] board, Trie trie, boolean[][] visited)
     {
@@ -31,7 +31,7 @@ public class Solution {
         visited[i][j]=true;
         for(int k=0; k<dx.length; k++)
         {
-            if(i+dx[k]>=0 && i+dx[k]<m && j+dy[k]>=0 && j+dy[k]<n && !visited[i][j])
+            if(i+dx[k]>=0 && i+dx[k]<m && j+dy[k]>=0 && j+dy[k]<n && !visited[i+dx[k]][j+dy[k]])
             {
                 dfs(i+dx[k], j+dy[k], str, board, trie, visited);
             }

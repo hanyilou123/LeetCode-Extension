@@ -28,7 +28,7 @@ public class NumArray {
             else{
                 int mid = start+(end-start)/2;
                 ret.left = buildTree(nums, start, mid);
-                ret.right = buildTree(nums, mid, end);
+                ret.right = buildTree(nums, mid+1, end);
                 ret.sum = ret.left.sum + ret.right.sum;
             }
             return ret;

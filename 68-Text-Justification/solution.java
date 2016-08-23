@@ -1,41 +1,59 @@
 public class Solution {
     public List<String> fullJustify(String[] words, int maxWidth) {
         List<String> res = new ArrayList<String>();
-        if(words==null || words.length==0)
-            return res;
-        StringBuilder sb = new StringBuilder();
-        int count=0;
-        for(int i=0; i<words.length; i++)
+        int n=words.length;
+        int i=0;
+        while(i<n)
         {
-            if(words[i].length()+sb.length()<=maxWidth)
+            int len = words[i].length();
+            int j=i+1;
+            while(j<n && len+1+words[j].length()<=maxWidth)
             {
-                sb.append(words[i]+" ");
-                count++;
+                len = len+1+words[j].length();
+                j++;
             }
-            else{
-                int diff = maxWidth-(sb.toString().length() - count);
-                int eve = diff/(count-1);
-                int more = diff-eve*(count-1);
-                String eveStr="";
-                while(eve>0)
+            StringBuilder line = words[i];
+            if(j==n)
+            {
+                for(int k=i+1; k<n; k++)
                 {
-                    eveStr+=" ";
-                    eve--;
+                    line.append(" ").append(words[k]);
                 }
-                String[] temp = sb.toString().trim().split(" ");
-                StringBuilder row = new StringBuilder();
-                int j =0;
-                for(j=0; j<more; j++)
+                while(line.length()<maxWidth)
                 {
-                    row.append(temp[j]+eveStr+" ");
+                    line.append(" ");
                 }
-                for(;j<temp.length-1; j++)
-                {
-                    row.append(temp[j]+eveStr);
-                }
-                row.append(temp[j]);
-                res.add(row.toString());
             }
+            else
+            {
+                int extraWhite = maxWidth-len;
+                int count = j-i-1;
+                
+                if(count==0)
+                {
+                    while(line.length()<maxWidth)
+                    {
+                        line.append(" ");
+                    }
+                }
+                else{
+                    for(int k=i+1; k<j; k++)
+                    {
+                        line.append(" ");
+                        for(int l=0; l<extraWhite/count; l++)
+                        {
+                            line.append(" ");
+                        }
+                        if(k-i<=(extraWhite%count))
+                        {
+                            line.append(" ");
+                        }
+                        line.append(words[k]);
+                    }
+                }
+            }
+            res.add(line);
+            i=j;
         }
         return res;
     }

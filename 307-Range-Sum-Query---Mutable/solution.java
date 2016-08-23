@@ -63,7 +63,7 @@ public class NumArray {
     
     public int sumRandgeValue(segmentTreeNode root, int start, int end)
     {
-        if(root.start==start && root.end==end)
+        if(root.end==end && root.start==start)
             return root.sum;
         else{
             int mid = root.start + (root.end-root.start)/2;
@@ -76,7 +76,7 @@ public class NumArray {
                 return sumRandgeValue(root.right, start, end);
             }
             else
-                return sumRandgeValue(root.left, start, mid) + sumRandgeValue(root.right, mid+1, end);
+                return sumRandgeValue(root.right, mid+1, end) + sumRandgeValue(root.left, start, mid);
         }
     }
 }

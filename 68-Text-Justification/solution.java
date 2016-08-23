@@ -12,7 +12,7 @@ public class Solution {
                 len = len+1+words[j].length();
                 j++;
             }
-            StringBuilder line = words[i];
+            StringBuilder line = new StringBuilder(words[i]);
             if(j==n)
             {
                 for(int k=i+1; k<n; k++)

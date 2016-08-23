@@ -19,6 +19,11 @@ public class Solution {
                     cur /= 10;
                 }
                 cur = cur/10+1;
+                // while(cur%10==9)
+                // {
+                //     cur /= 10;
+                // }
+                // cur++;      写法不对
             }
         }
         return result;

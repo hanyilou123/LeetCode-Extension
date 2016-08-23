@@ -1,21 +1,69 @@
 public class NumArray {
-    int[] numsCopy;
+    
+    class segmentTreeNode{
+        int start, end;
+        segmentTreeNode left, right;
+        int sum;
+        public segmentTreeNode(int start, int end){
+            this.start=start;
+            this.end=end;
+            this.left=new segmentTreeNode();
+            this.right=new segmentTreeNode();
+            this.sum = 0;
+        }
+    }
+    segmentTreeNode root = null;
     public NumArray(int[] nums) {
-        numsCopy = new int[nums.length];
-        for(int i=0; i<nums.length; i++)
-            numsCopy[i]= nums[i];
-        this.numsCopy = numsCopy;
+        root = buildTree(nums, 0, nums.length-1);
+    }
+    
+    public segmentTreeNode buildTree(int[] nums, int start, int end)
+    {
+        if(start>end)
+            return null;
+        else{
+            segmentTreeNode ret = new segmentTreeNode(start, end);
+            if(start==end)
+                ret.sum = nums[start];
+            else{
+                int mid = start+(end-start)/2;
+                ret.left = buildTree(nums, start, mid);
+                ret.right = buildTree(nums, mid, end);
+                ret.sum = ret.left.sum + ret.right.sum;
+            }
+            return ret;
+        }
     }
 
     void update(int i, int val) {
-        numsCopy[i] = val;
+        updateValue(root, i, val);
+    }
+    
+    public void updateValue(segmentTreeNode root, int pos, int val)
+    {
+        if(root.start==root.end)
+            root.sum = val;
+        else{
+            int mid = root.start + (root.end-root.start)/2;
+            if(pos<=mid)
+            {
+                updateValue(root.left, pos, val);
+            }
+            else
+            {
+                updateValue(root.right, pos, val);
+            }
+            root.sum = root.left.sum + root.right.sum;
+        }
     }
 
     public int sumRange(int i, int j) {
-        int sum=0;
-        for(int k=i; k<=j; k++)
-            sum += numsCopy[k];
-        return sum;
+        return sumRandgeValue(root, i, j);
+    }
+    
+    public int sumRandgeValue(segmentTreeNode root, int i, int j)
+    {
+        
     }
 }
 

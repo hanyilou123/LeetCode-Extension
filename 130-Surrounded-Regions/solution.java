@@ -13,6 +13,16 @@ public class Solution {
                     dfs(i, j, board);
             }
         }
+        for(int i=0; i<row; i++)
+        {
+            for(int j=0; j<col; j++)
+            {
+                if(board[i][j]=='*')
+                    board[i][j]='O';
+                else
+                    board[i][j]='X';
+            }
+        }
     }
     public void dfs(int i, int j, char[][] board)
     {
@@ -24,7 +34,7 @@ public class Solution {
         board[i][j]='*';
         for(int k=0; k<dx.length; k++)
         {
-            if(i+dx[k]>=0 && i+dx[k]<row && j+dy[k]>=0 && j+dy[k]<col)
+            if(i+dx[k]>=0 && i+dx[k]<row && j+dy[k]>=0 && j+dy[k]<col && board[i+dx[k]][j+dy[k]]=='O')
             {
                 dfs(i+dx[k], j+dy[k], board);
             }

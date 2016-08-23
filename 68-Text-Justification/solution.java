@@ -52,7 +52,7 @@ public class Solution {
                     }
                 }
             }
-            res.add(line);
+            res.add(line.toString());
             i=j;
         }
         return res;

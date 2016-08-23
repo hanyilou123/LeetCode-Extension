@@ -7,8 +7,8 @@ public class NumArray {
         public segmentTreeNode(int start, int end){
             this.start=start;
             this.end=end;
-            this.left=new segmentTreeNode();
-            this.right=new segmentTreeNode();
+            this.left=null;
+            this.right=null;
             this.sum = 0;
         }
     }

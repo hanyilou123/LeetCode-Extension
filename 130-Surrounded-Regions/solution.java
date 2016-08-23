@@ -34,7 +34,7 @@ public class Solution {
         board[i][j]='*';
         for(int k=0; k<dx.length; k++)
         {
-            if(i+dx[k]>=0 && i+dx[k]<row && j+dy[k]>=0 && j+dy[k]<col && board[i+dx[k]][j+dy[k]]=='O')
+            if(i+dx[k]>0 && i+dx[k]<row && j+dy[k]>0 && j+dy[k]<col && board[i+dx[k]][j+dy[k]]=='O')
             {
                 dfs(i+dx[k], j+dy[k], board);
             }

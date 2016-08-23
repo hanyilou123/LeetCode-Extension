@@ -42,7 +42,7 @@ public class Solution {
 class TrieNode{
     TrieNode[] children = new TrieNode[26];
     String item = "";
-    public TrieNode{
+    public TrieNode(){
         
     }
 }

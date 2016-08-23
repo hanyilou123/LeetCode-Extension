@@ -5,13 +5,27 @@ public class Solution {
         if(board==null || board.length==0 || board[0].length==0)
             return;
         int row=board.length, col=board[0].length;
+        // for(int i=0; i<row; i++)
+        // {
+        //     for(int j=0; j<col; j++)
+        //     {
+        //         if((i==0 || i==row-1 || j==0 || j==col-1) && board[i][j]=='O')
+        //             dfs(i, j, board);
+        //     }
+        // }
         for(int i=0; i<row; i++)
         {
-            for(int j=0; j<col; j++)
-            {
-                if((i==0 || i==row-1 || j==0 || j==col-1) && board[i][j]=='O')
-                    dfs(i, j, board);
-            }
+            if(board[i][0]=='O')
+                dfs(i, 0, board);
+            if(board[i][col-1]=='O')
+                dfs(i, col-1, board);
+        }
+        for(int j=0; j<col; j++)
+        {
+            if(board[0][j]=='O')
+                dfs(0, j, board);
+            if(board[row-1][j]=='O')
+                dfs(row-1, j, board);
         }
         for(int i=0; i<row; i++)
         {
@@ -34,7 +48,7 @@ public class Solution {
         board[i][j]='*';
         for(int k=0; k<dx.length; k++)
         {
-            if(i+dx[k]>0 && i+dx[k]<row && j+dy[k]>0 && j+dy[k]<col && board[i+dx[k]][j+dy[k]]=='O')
+            if(i+dx[k]>0 && i+dx[k]<row && j+dy[k]>0 && j+dy[k]<col)
             {
                 dfs(i+dx[k], j+dy[k], board);
             }

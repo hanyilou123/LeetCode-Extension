@@ -20,7 +20,7 @@ public class Solution {
         }
         return result;
     }
-    public void dfs(int i, int j, String str, char[][] board, Trie trie, boolea[][] visited)
+    public void dfs(int i, int j, String str, char[][] board, Trie trie, boolean[][] visited)
     {
         str += board[i][j];
         if(!trie.startsWith(str))

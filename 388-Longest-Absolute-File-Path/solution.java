@@ -6,7 +6,7 @@ public class Solution {
         for(String str:splitArr)
         {
             int level = countLevel(str);
-            if(lenStk.size()>level)
+            while(lenStk.size()>level)
             {
                 curlen -= lenStk.pop();
             }
@@ -18,6 +18,7 @@ public class Solution {
             }
             lenStk.push(len);
         }
+        return maxlen;
     }
     public int countLevel(String str)
     {
